@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     blackholes.html - Black Holes Page
+     Author: Harmit Patel - COMP2057-91
+     Description: In-depth look at black holes: types, formation,
+                  key concepts like the event horizon and
+                  Hawking radiation. Demonstrates the definition
+                  list, unordered list, table, and special
+                  character usage.
+     ============================================================ -->
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Discover black holes - the most extreme objects in the universe." />
+    <title>Space Explorer | Black Holes</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Page-specific styles for the black hole visual elements -->
+    <style>
+      /* Animated glowing circle representing a black hole */
+      .blackhole-visual {
+        width:         220px;
+        height:        220px;
+        border-radius: 50%;
+        background:    radial-gradient(circle at 35% 35%,
+                         rgba(123,47,255,0.6) 0%,
+                         rgba(0,0,0,1) 55%,
+                         rgba(255,100,50,0.3) 70%,
+                         rgba(255,200,0,0.15) 85%,
+                         transparent 100%);
+        box-shadow:
+          0 0 60px rgba(255,100,50,0.4),
+          0 0 120px rgba(123,47,255,0.3),
+          inset 0 0 40px rgba(0,0,0,0.9);
+        margin:     30px auto;
+        animation:  glowPulse 3s ease-in-out infinite;
+        position:   relative;
+      }
+      /* Accretion disc ring around the visual black hole */
+      .blackhole-visual::after {
+        content:       '';
+        position:      absolute;
+        left:          50%;
+        top:           50%;
+        transform:     translate(-50%, -50%) rotateX(70deg);
+        width:         320px;
+        height:        320px;
+        border-radius: 50%;
+        border:        8px solid transparent;
+        border-top:    8px solid rgba(255,150,50,0.5);
+        border-bottom: 8px solid rgba(255,100,50,0.3);
+        animation:     spin 6s linear infinite;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="starfield"></canvas>
+    <div class="page-wrapper">
+
+      <!-- HEADER -->
+      <header>
+        <div class="header-inner">
+          <a href="index.html" class="site-logo">SPACE<span>&nbsp;EXPLORER</span></a>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <a href="index.html" class="back-link">Back to Home</a>
+
+        <h1 class="page-title">Black Holes</h1>
+        <p class="page-subtitle">&#11044; Where Spacetime Ends</p>
+
+        <!-- Black hole image with alt text and dimensions for fast loading -->
+        <div class="text-center">
+          <img src="blackhole.jpg"
+               alt="Artistic rendering of a black hole with glowing accretion disc"
+               width="600" height="400"
+               style="width:100%;max-width:600px;height:auto;border-radius:12px;margin:20px auto;display:block;" />
+        </div>
+
+        <!-- Animated CSS black hole visual -->
+        <div class="text-center">
+          <div class="blackhole-visual"></div>
+          <p style="color:var(--color-muted);font-size:0.8rem;margin-top:-10px;">
+            <em>Artistic rendering: black hole with accretion disc</em>
+          </p>
+        </div>
+
+        <!-- Introduction -->
+        <p>
+          A black hole is a region of spacetime where gravity is so immense that nothing &mdash;
+          not even <strong>light</strong> &mdash; can escape its gravitational pull once it crosses
+          a boundary called the <em>event horizon</em>. Black holes form when massive stars
+          exhaust their nuclear fuel and collapse under their own gravity, sometimes triggering
+          a spectacular explosion known as a <strong>supernova</strong>.
+        </p>
+
+        <p>
+          First theorised as mathematical solutions to Albert Einstein&rsquo;s
+          <em>General Theory of Relativity</em> in 1916, black holes were considered
+          theoretical curiosities for decades. Today, astronomers have not only confirmed
+          their existence but have captured the <strong>first direct image</strong> of one:
+          the supermassive black hole at the centre of galaxy M87, photographed by the
+          Event Horizon Telescope in April 2019.
+        </p>
+
+        <hr />
+
+        <!-- Special characters demonstration section -->
+        <h2>Special Astronomical Symbols</h2>
+        <div class="special-chars">
+          Sun: &#9728; &nbsp;&nbsp;
+          Star: &#9733; &nbsp;&nbsp;
+          Black Circle: &#11044; &nbsp;&nbsp;
+          Infinity: &infin; &nbsp;&nbsp;
+          Delta: &Delta; &nbsp;&nbsp;
+          Degree: &deg; &nbsp;&nbsp;
+          Copyright: &copy; &nbsp;&nbsp;
+          Registered: &reg; &nbsp;&nbsp;
+          Trade: &trade; &nbsp;&nbsp;
+          Pi: &pi; &nbsp;&nbsp;
+          Alpha: &alpha; &nbsp;&nbsp;
+          Omega: &Omega;
+        </div>
+
+        <hr />
+
+        <!-- Types of black holes: definition list -->
+        <h2>Types of Black Holes</h2>
+        <p>
+          Astronomers classify black holes into three main categories based on their mass.
+          Each type forms through different processes and plays a distinct role in the
+          universe&rsquo;s evolution.
+        </p>
+
+        <dl class="space-dl">
+          <dt>Stellar Black Holes</dt>
+          <dd>
+            The most common type, formed when a massive star (at least 20 times the mass of
+            the Sun) collapses at the end of its life. Stellar black holes typically have masses
+            between 3 and 100 times that of the Sun. The closest known stellar black hole,
+            Gaia BH1, is located about 1,560 light-years from Earth.
+          </dd>
+
+          <dt>Intermediate Black Holes</dt>
+          <dd>
+            With masses between 100 and 100,000 solar masses, intermediate black holes
+            bridge the gap between stellar and supermassive varieties. They are rarely
+            observed and may form through the merging of multiple stellar black holes
+            in dense star clusters.
+          </dd>
+
+          <dt>Supermassive Black Holes</dt>
+          <dd>
+            Lurking at the centres of most large galaxies, supermassive black holes range
+            from millions to <em>billions</em> of solar masses. The Milky Way hosts
+            Sagittarius A*, a supermassive black hole with a mass of roughly 4 million Suns.
+            When actively feeding on surrounding matter, they become quasars &mdash; the
+            brightest persistent objects in the universe.
+          </dd>
+
+          <dt>Primordial Black Holes (Theoretical)</dt>
+          <dd>
+            Hypothetical black holes that may have formed in the very early universe,
+            less than a second after the Big Bang. If they exist, they could range
+            from microscopic to very large sizes and may contribute to the mysterious
+            <strong>dark matter</strong> that makes up 27% of the universe.
+          </dd>
+        </dl>
+
+        <hr />
+
+        <!-- Key black hole concepts: unordered list -->
+        <h2>Key Concepts</h2>
+
+        <ul class="space-list">
+          <li>
+            <strong>Event Horizon</strong> &mdash; The point of no return around a black hole.
+            Once any matter or light crosses this boundary, it cannot escape. The radius of the
+            event horizon is called the Schwarzschild radius.
+          </li>
+          <li>
+            <strong>Singularity</strong> &mdash; The theoretical point at the centre of a
+            black hole where density becomes infinite and known physics breaks down.
+            General relativity predicts singularities; quantum mechanics may resolve them.
+          </li>
+          <li>
+            <strong>Accretion Disc</strong> &mdash; A swirling disc of superheated gas and dust
+            orbiting the black hole. As material falls inward, friction heats it to millions
+            of degrees, causing it to glow brightly across the electromagnetic spectrum.
+          </li>
+          <li>
+            <strong>Hawking Radiation</strong> &mdash; Proposed by physicist Stephen Hawking in 1974,
+            this quantum effect predicts that black holes slowly emit thermal radiation and
+            gradually evaporate over astronomical timescales. Smaller black holes evaporate
+            faster than larger ones.
+          </li>
+          <li>
+            <strong>Gravitational Time Dilation</strong> &mdash; Near a black hole, extreme gravity
+            causes time to pass more slowly relative to a distant observer. This effect,
+            predicted by Einstein, has been experimentally confirmed on Earth using atomic clocks.
+          </li>
+        </ul>
+
+        <!-- Ordered list: Milestones in black hole discovery -->
+        <h2>Key Milestones in Black Hole History</h2>
+        <ol class="space-ol">
+          <li>
+            <strong>1916</strong> &mdash; Karl Schwarzschild derives the first exact solution
+            to Einstein&rsquo;s field equations, describing the geometry around a point mass.
+          </li>
+          <li>
+            <strong>1964</strong> &mdash; Cygnus X-1 is discovered as the first widely accepted
+            black hole candidate from X-ray observations made by a sounding rocket.
+          </li>
+          <li>
+            <strong>1974</strong> &mdash; Stephen Hawking theorises that black holes emit thermal
+            radiation (Hawking Radiation) due to quantum effects near the event horizon.
+          </li>
+          <li>
+            <strong>2015</strong> &mdash; LIGO detects gravitational waves from two merging
+            stellar black holes, directly confirming their existence for the first time.
+          </li>
+          <li>
+            <strong>2019</strong> &mdash; The Event Horizon Telescope releases the first-ever
+            photograph of a black hole: the supermassive M87* at 55 million light-years away.
+          </li>
+        </ol>
+
+        <!-- Comparison table of notable black holes -->
+        <h2>Notable Black Holes</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Mass (Solar Masses)</th>
+                <th>Location</th>
+                <th>Notable Fact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Sagittarius A*</strong></td>
+                <td>Supermassive</td>
+                <td>~4 million</td>
+                <td>Milky Way Centre</td>
+                <td>Imaged in 2022 by the Event Horizon Telescope</td>
+              </tr>
+              <tr>
+                <td><strong>M87*</strong></td>
+                <td>Supermassive</td>
+                <td>6.5 billion</td>
+                <td>Galaxy M87</td>
+                <td>First black hole ever directly photographed (2019)</td>
+              </tr>
+              <tr>
+                <td><strong>Cygnus X-1</strong></td>
+                <td>Stellar</td>
+                <td>~21</td>
+                <td>Milky Way</td>
+                <td>First widely accepted black hole candidate, discovered 1964</td>
+              </tr>
+              <tr>
+                <td><strong>TON 618</strong></td>
+                <td>Supermassive</td>
+                <td>66 billion</td>
+                <td>Canes Venatici</td>
+                <td>One of the most massive black holes ever found</td>
+              </tr>
+              <tr>
+                <td><strong>Gaia BH1</strong></td>
+                <td>Stellar</td>
+                <td>~9.9</td>
+                <td>Ophiuchus (1,560 ly)</td>
+                <td>Closest known black hole to Earth, discovered 2022</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- External link -->
+        <p>
+          Learn more about black hole research at the
+          <a href="https://eventhorizontelescope.org" target="_blank" rel="noopener noreferrer">
+            Event Horizon Telescope Collaboration website</a>.
+        </p>
+
+        <p class="text-right">
+          <a href="#" class="back-link" style="display:inline-flex;">&#8679; Back to Top</a>
+        </p>
+
+      </main>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="footer-inner">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+          <p>&copy; 2025 Space Explorer &mdash; <span class="footer-name">Harmit Patel</span> &bull; COMP2057-91 &bull; University of Windsor</p>
+        </div>
+      </footer>
+
+      <button id="scrollTopBtn" title="Back to top"
+              style="position:fixed;bottom:30px;right:30px;
+                     background:var(--color-primary);color:var(--color-bg);
+                     border:none;border-radius:50%;width:44px;height:44px;
+                     font-size:1.2rem;cursor:pointer;opacity:0;
+                     transition:opacity 0.3s ease;z-index:999;">&#8679;</button>
+
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

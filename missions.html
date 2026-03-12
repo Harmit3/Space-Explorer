@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     missions.html - Space Missions Page
+     Author: Harmit Patel - COMP2057-91
+     Description: Covers landmark crewed and robotic space
+                  missions from the dawn of the space age to
+                  the present. Demonstrates an image map with
+                  clickable regions, ordered and unordered lists,
+                  and a data comparison table.
+     ============================================================ -->
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore landmark space missions from Apollo to Mars rovers." />
+    <title>Space Explorer | Space Missions</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Page-specific styles for the image map and mission cards -->
+    <style>
+      /* Mission era badge styling */
+      .era-badge {
+        font-family:    var(--font-display);
+        font-size:      0.65rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding:        3px 10px;
+        border-radius:  20px;
+        margin-left:    8px;
+        vertical-align: middle;
+      }
+      .era-early  { background:rgba(255,215,0,0.15);  color:#ffd700; border:1px solid rgba(255,215,0,0.3); }
+      .era-modern { background:rgba(0,212,255,0.1);   color:#00d4ff; border:1px solid rgba(0,212,255,0.2); }
+      .era-future { background:rgba(123,47,255,0.15); color:#a07fff; border:1px solid rgba(123,47,255,0.3); }
+
+      /* Image map region tooltip styling */
+      .imgmap-wrap { position:relative; display:inline-block; }
+      .map-tooltip {
+        display:       none;
+        position:      absolute;
+        background:    rgba(2,11,24,0.95);
+        border:        1px solid var(--color-border);
+        border-radius: 6px;
+        padding:       10px 14px;
+        font-size:     0.85rem;
+        color:         var(--color-text);
+        z-index:       100;
+        white-space:   nowrap;
+        pointer-events: none;
+        box-shadow:    var(--glow-cyan);
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="starfield"></canvas>
+    <div class="page-wrapper">
+
+      <!-- HEADER -->
+      <header>
+        <div class="header-inner">
+          <a href="index.html" class="site-logo">SPACE<span>&nbsp;EXPLORER</span></a>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <a href="index.html" class="back-link">Back to Home</a>
+
+        <h1 class="page-title">Space Missions</h1>
+        <p class="page-subtitle">&#128640; Humanity&rsquo;s Greatest Voyages</p>
+
+        <!-- Introduction -->
+        <p>
+          Since the launch of Sputnik 1 in October 1957, humanity has dispatched thousands
+          of spacecraft into orbit and beyond. These missions have transformed our understanding
+          of the cosmos, delivered stunning imagery of distant worlds, and laid the groundwork
+          for future human exploration of the Solar System. From crewed Moon landings to
+          robotic rovers crawling across Martian plains, space missions represent the pinnacle
+          of scientific and engineering achievement.
+        </p>
+
+        <p>
+          This page highlights some of the most significant space missions in history,
+          spanning the pioneering era of the space race through to the modern age of
+          international cooperation and commercial spaceflight. Each mission pushed the
+          boundaries of what was thought possible and inspired generations of scientists,
+          engineers, and dreamers.
+        </p>
+
+        <!-- ====================================================
+             IMAGE MAP
+             A stylised mission diagram with at least 3 clickable
+             regions linking to sections further on this page.
+             ==================================================== -->
+        <h2>Mission Overview Map</h2>
+        <p>
+          Click on a region of the mission timeline below to jump to that era of exploration.
+          The map features three clickable zones: the Early Space Age, the Planetary Era,
+          and Modern Exploration.
+        </p>
+
+        <!-- Image map container with the usemap attribute -->
+        <div class="imgmap-wrap" style="margin:24px 0;">
+          <!-- The usemap attribute links this image to the map element below -->
+          <img src="missionmap.jpg"
+               usemap="#missionmap"
+               alt="Space Missions Timeline Map showing three eras of exploration"
+               width="900" height="220"
+               style="width:100%;max-width:900px;height:auto;
+                      background:linear-gradient(90deg,
+                        rgba(255,215,0,0.3) 0% 33%,
+                        rgba(0,212,255,0.3) 33% 66%,
+                        rgba(123,47,255,0.3) 66% 100%);
+                      border:1px solid var(--color-border);
+                      border-radius:8px;min-height:160px;
+                      display:block;" />
+
+          <!-- MAP element defining clickable regions via AREA tags -->
+          <map name="missionmap">
+
+            <!-- Region 1: Early Space Age (left third of image) -->
+            <area shape="rect"
+                  coords="0,0,300,220"
+                  href="#early-age"
+                  alt="Early Space Age: Sputnik to Apollo"
+                  title="Early Space Age (1957-1972)" />
+
+            <!-- Region 2: Planetary Exploration Era (centre third) -->
+            <area shape="rect"
+                  coords="300,0,600,220"
+                  href="#planetary-era"
+                  alt="Planetary Exploration Era: Voyager to Cassini"
+                  title="Planetary Era (1972-2004)" />
+
+            <!-- Region 3: Modern Exploration (right third) -->
+            <area shape="rect"
+                  coords="600,0,900,220"
+                  href="#modern-era"
+                  alt="Modern Exploration: Mars rovers to James Webb"
+                  title="Modern Exploration (2004-Present)" />
+
+          </map><!-- end map -->
+        </div>
+
+        <!-- Label guide for the image map zones -->
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:32px;">
+          <span style="font-family:var(--font-display);font-size:0.7rem;
+                       color:#ffd700;border:1px solid rgba(255,215,0,0.3);
+                       padding:4px 12px;border-radius:3px;">
+            &#9632; Early Space Age
+          </span>
+          <span style="font-family:var(--font-display);font-size:0.7rem;
+                       color:#00d4ff;border:1px solid rgba(0,212,255,0.3);
+                       padding:4px 12px;border-radius:3px;">
+            &#9632; Planetary Era
+          </span>
+          <span style="font-family:var(--font-display);font-size:0.7rem;
+                       color:#a07fff;border:1px solid rgba(123,47,255,0.3);
+                       padding:4px 12px;border-radius:3px;">
+            &#9632; Modern Exploration
+          </span>
+        </div>
+
+        <hr />
+
+        <!-- ====================================================
+             EARLY SPACE AGE - anchor target for image map link
+             ==================================================== -->
+        <h2 id="early-age" class="anchor-target">
+          Early Space Age <span class="era-badge era-early">1957 &ndash; 1972</span>
+        </h2>
+
+        <p>
+          The early space age was defined by intense competition between the United States
+          and the Soviet Union during the Cold War. Both superpowers poured enormous resources
+          into their space programmes, producing a rapid series of firsts: first satellite,
+          first human in orbit, first spacewalk, and ultimately the first crewed Moon landing.
+          This era demonstrated that humanity could indeed reach beyond its home planet.
+        </p>
+
+        <!-- Ordered list of early space age milestones -->
+        <ol class="space-ol">
+          <li>
+            <strong>Sputnik 1 (1957, USSR)</strong> &mdash; The world&rsquo;s first artificial
+            satellite, launched on 4 October 1957. Its simple radio beeps heard around the world
+            shocked the West and launched the space race.
+          </li>
+          <li>
+            <strong>Vostok 1 (1961, USSR)</strong> &mdash; Carried Yuri Gagarin into orbit,
+            making him the first human in space on 12 April 1961. The flight lasted 108 minutes
+            and completed one orbit of Earth.
+          </li>
+          <li>
+            <strong>Mercury &ndash; Friendship 7 (1962, USA)</strong> &mdash; John Glenn became
+            the first American to orbit Earth, completing three orbits on 20 February 1962.
+          </li>
+          <li>
+            <strong>Apollo 8 (1968, USA)</strong> &mdash; First crewed spacecraft to orbit the Moon.
+            Astronauts Frank Borman, Jim Lovell, and William Anders captured the iconic
+            &ldquo;Earthrise&rdquo; photograph.
+          </li>
+          <li>
+            <strong>Apollo 11 (1969, USA)</strong> &mdash; Neil Armstrong and Buzz Aldrin became
+            the first humans to walk on the Moon on 20 July 1969, while Michael Collins
+            orbited above in the command module.
+          </li>
+        </ol>
+
+        <hr />
+
+        <!-- ====================================================
+             PLANETARY ERA - anchor target
+             ==================================================== -->
+        <h2 id="planetary-era" class="anchor-target">
+          Planetary Exploration Era <span class="era-badge era-modern">1972 &ndash; 2004</span>
+        </h2>
+
+        <p>
+          As the crewed Moon programme wound down, space agencies shifted focus to robotic
+          exploration of the broader Solar System. Unmanned probes ventured to every planet,
+          revealing worlds of extraordinary beauty and complexity. Missions like Voyager and
+          Cassini returned data that scientists are still analysing decades later.
+        </p>
+
+        <!-- Unordered list of key planetary missions -->
+        <ul class="space-list">
+          <li>
+            <strong>Voyager 1 &amp; 2 (1977, USA)</strong> &mdash; Twin probes that performed
+            flybys of Jupiter, Saturn, Uranus (Voyager 2 only), and Neptune. Voyager 1 is now
+            the most distant human-made object, in interstellar space.
+          </li>
+          <li>
+            <strong>Galileo (1989, USA)</strong> &mdash; Orbited Jupiter from 1995 to 2003,
+            discovering evidence of a subsurface ocean on Europa and studying Jupiter&rsquo;s
+            atmosphere with a descent probe.
+          </li>
+          <li>
+            <strong>Mars Pathfinder (1997, USA)</strong> &mdash; Delivered the Sojourner rover
+            &mdash; the first successful Mars rover &mdash; demonstrating that the red planet
+            could be explored by a free-roaming robotic vehicle.
+          </li>
+          <li>
+            <strong>Cassini-Huygens (1997, USA/ESA)</strong> &mdash; Arrived at Saturn in 2004
+            and spent 13 years studying the ringed giant and its moons. The Huygens probe
+            descended through the atmosphere of Titan.
+          </li>
+        </ul>
+
+        <!-- Missions table -->
+        <h2>Mission Comparison Table</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Mission</th>
+                <th>Agency</th>
+                <th>Launch Year</th>
+                <th>Destination</th>
+                <th>Type</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Apollo 11</strong></td>
+                <td>NASA</td>
+                <td>1969</td>
+                <td>Moon</td>
+                <td>Crewed</td>
+                <td>Completed</td>
+              </tr>
+              <tr>
+                <td><strong>Voyager 1</strong></td>
+                <td>NASA</td>
+                <td>1977</td>
+                <td>Outer Solar System</td>
+                <td>Robotic</td>
+                <td>Active (Interstellar)</td>
+              </tr>
+              <tr>
+                <td><strong>Hubble Space Telescope</strong></td>
+                <td>NASA/ESA</td>
+                <td>1990</td>
+                <td>Low Earth Orbit</td>
+                <td>Observatory</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td><strong>Curiosity Rover</strong></td>
+                <td>NASA</td>
+                <td>2011</td>
+                <td>Mars</td>
+                <td>Rover</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td><strong>Perseverance Rover</strong></td>
+                <td>NASA</td>
+                <td>2020</td>
+                <td>Mars</td>
+                <td>Rover</td>
+                <td>Active</td>
+              </tr>
+              <tr>
+                <td><strong>James Webb Telescope</strong></td>
+                <td>NASA/ESA/CSA</td>
+                <td>2021</td>
+                <td>L2 Point</td>
+                <td>Observatory</td>
+                <td>Active</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr />
+
+        <!-- Modern era anchor target -->
+        <h2 id="modern-era" class="anchor-target">
+          Modern Exploration <span class="era-badge era-future">2004 &ndash; Present</span>
+        </h2>
+
+        <p>
+          The 21st century has seen an explosion of Mars missions, the rise of commercial
+          spaceflight companies like SpaceX, and the deployment of the revolutionary
+          <strong>James Webb Space Telescope</strong> (JWST). JWST, launched on
+          25 December 2021, observes the universe in infrared light and has already returned
+          images of galaxies formed just 300 million years after the Big Bang &mdash; the
+          earliest light humanity has ever observed.
+        </p>
+
+        <p>
+          Looking ahead, NASA&rsquo;s <em>Artemis programme</em> aims to return humans
+          to the Moon by the mid-2020s, serving as a proving ground for eventual crewed
+          missions to Mars. International partners including the European Space Agency,
+          the Canadian Space Agency, and JAXA are collaborating on the Lunar Gateway
+          orbital station, which will support long-duration lunar exploration.
+        </p>
+
+        <!-- External link -->
+        <p>
+          Follow current mission status at
+          <a href="https://www.nasa.gov/missions" target="_blank" rel="noopener noreferrer">
+            NASA Missions</a>.
+        </p>
+
+        <p class="text-right">
+          <a href="#" class="back-link" style="display:inline-flex;">&#8679; Back to Top</a>
+        </p>
+
+      </main>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="footer-inner">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+          <p>&copy; 2025 Space Explorer &mdash; <span class="footer-name">Harmit Patel</span> &bull; COMP2057-91 &bull; University of Windsor</p>
+        </div>
+      </footer>
+
+      <button id="scrollTopBtn" title="Back to top"
+              style="position:fixed;bottom:30px;right:30px;
+                     background:var(--color-primary);color:var(--color-bg);
+                     border:none;border-radius:50%;width:44px;height:44px;
+                     font-size:1.2rem;cursor:pointer;opacity:0;
+                     transition:opacity 0.3s ease;z-index:999;">&#8679;</button>
+
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

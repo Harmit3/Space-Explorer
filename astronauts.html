@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     astronauts.html - Astronauts Page
+     Author: Harmit Patel - COMP2057-91
+     Description: Profiles pioneering astronauts from the early
+                  space age to the International Space Station
+                  era. Demonstrates ordered list, unordered list,
+                  definition list, table, image thumbnails,
+                  and float-based layout using clearfix.
+     ============================================================ -->
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Meet the brave astronauts who ventured into the cosmos." />
+    <title>Space Explorer | Astronauts</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Page-specific styles for astronaut profile cards -->
+    <style>
+      /* Astronaut profile card with left border accent */
+      .astronaut-card {
+        display:       flex;
+        gap:           20px;
+        align-items:   flex-start;
+        background:    var(--color-card);
+        border:        1px solid var(--color-border);
+        border-left:   3px solid var(--color-primary);
+        border-radius: 0 8px 8px 0;
+        padding:       20px 24px;
+        margin:        16px 0;
+        transition:    var(--transition);
+      }
+      .astronaut-card:hover {
+        border-left-color: var(--color-gold);
+        box-shadow: var(--glow-cyan);
+      }
+      /* Avatar circle showing astronaut initials */
+      .astronaut-avatar {
+        width:           56px;
+        height:          56px;
+        min-width:       56px;
+        border-radius:   50%;
+        background:      linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+        display:         flex;
+        align-items:     center;
+        justify-content: center;
+        font-family:     var(--font-display);
+        font-size:       1rem;
+        font-weight:     900;
+        color:           var(--color-bg);
+        box-shadow:      var(--glow-cyan);
+      }
+      /* Astronaut info block beside avatar */
+      .astronaut-info h3 {
+        margin-top: 0;
+        color:      var(--color-primary);
+      }
+      .astronaut-info .nation {
+        font-size:      0.7rem;
+        font-family:    var(--font-display);
+        letter-spacing: 0.1em;
+        color:          var(--color-muted);
+        margin-bottom:  8px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="starfield"></canvas>
+    <div class="page-wrapper">
+
+      <!-- HEADER -->
+      <header>
+        <div class="header-inner">
+          <a href="index.html" class="site-logo">SPACE<span>&nbsp;EXPLORER</span></a>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <a href="index.html" class="back-link">Back to Home</a>
+
+        <h1 class="page-title">Astronauts</h1>
+        <p class="page-subtitle">&#128119; Humanity&rsquo;s Emissaries to the Stars</p>
+
+        <!-- Spacewalk image with descriptive alt text -->
+        <div class="text-center">
+          <img src="spacewalk.jpg"
+               alt="Astronaut performing a spacewalk with Earth visible in the background"
+               width="600" height="400"
+               style="width:100%;max-width:600px;height:auto;border-radius:12px;margin:20px auto;display:block;" />
+          <p style="color:var(--color-muted);font-size:0.8rem;">
+            <em>An astronaut conducts an Extra-Vehicular Activity (EVA) in low Earth orbit</em>
+          </p>
+        </div>
+
+        <!-- Introduction paragraphs -->
+        <p>
+          Astronauts &mdash; or cosmonauts, as Russian spacefarers are called &mdash; are among
+          the most rigorously trained individuals in human history. Selected from thousands of
+          applicants for their physical fitness, psychological resilience, and technical expertise,
+          they undergo years of preparation before ever leaving Earth. Since Yuri Gagarin&rsquo;s
+          historic flight in 1961, more than <strong>600 people</strong> from over 40 countries
+          have made the journey to space.
+        </p>
+
+        <p>
+          Life in space presents unique challenges: microgravity causes <em>bone density loss</em>
+          and <em>muscle atrophy</em>, while cosmic radiation increases cancer risk.
+          Astronauts aboard the International Space Station (ISS) exercise for two hours every
+          day to counteract these effects. Despite the hardships, most who have experienced
+          the overview effect &mdash; seeing Earth as a fragile blue marble against the black
+          void &mdash; describe it as a profoundly life-changing experience.
+        </p>
+
+        <hr />
+
+        <!-- Astronaut requirements definition list -->
+        <h2>How to Become an Astronaut</h2>
+        <p>
+          NASA selects new astronaut classes approximately every four years.
+          The requirements are extremely demanding, covering academic, physical,
+          and psychological criteria:
+        </p>
+
+        <dl class="space-dl">
+          <dt>Education</dt>
+          <dd>
+            A master&rsquo;s degree (or equivalent) in a STEM field: engineering, biological
+            science, physical science, computer science, or mathematics. Medical doctors and
+            military test pilots with the required experience also qualify.
+          </dd>
+          <dt>Professional Experience</dt>
+          <dd>
+            At least two years of relevant professional experience after completing the
+            qualifying degree, or at least 1,000 hours of pilot-in-command time in jet aircraft.
+          </dd>
+          <dt>Physical Fitness</dt>
+          <dd>
+            Candidates must pass a long-duration spaceflight physical examination. Requirements
+            include specific ranges for height (between 157 cm and 190 cm for NASA), blood
+            pressure, and vision (correctable to 20/20).
+          </dd>
+          <dt>Psychological Assessment</dt>
+          <dd>
+            Extensive psychological testing assesses teamwork, stress management, conflict
+            resolution, and the ability to work in isolated, confined environments for
+            extended periods &mdash; often alongside an international crew speaking different languages.
+          </dd>
+          <dt>Training Programme</dt>
+          <dd>
+            Candidates who pass selection enter a two-year basic training programme covering
+            spacewalking (EVA), robotic arm operations (Canadarm2), Russian language, aircraft
+            flying, water survival, and training in Russia&rsquo;s Star City facility.
+          </dd>
+        </dl>
+
+        <hr />
+
+        <!-- Pioneering astronauts profiles -->
+        <h2>Pioneering Astronauts</h2>
+
+        <!-- Astronaut 1 -->
+        <div class="astronaut-card">
+          <div class="astronaut-avatar">YG</div>
+          <div class="astronaut-info">
+            <h3>Yuri Gagarin <em>(1934&ndash;1968)</em></h3>
+            <p class="nation">&#127479;&#127482; Soviet Union &mdash; Cosmonaut</p>
+            <p>
+              The first human to travel into outer space, Gagarin completed one orbit of Earth
+              aboard Vostok 1 on 12 April 1961. The 108-minute flight made him an instant
+              global hero. Tragically, he died in a training jet crash in 1968, aged 34.
+            </p>
+          </div>
+        </div>
+
+        <!-- Astronaut 2 -->
+        <div class="astronaut-card">
+          <div class="astronaut-avatar">NA</div>
+          <div class="astronaut-info">
+            <h3>Neil Armstrong <em>(1930&ndash;2012)</em></h3>
+            <p class="nation">&#127482;&#127480; United States &mdash; NASA Astronaut</p>
+            <p>
+              Commander of Apollo 11, Neil Armstrong became the first human to walk on the Moon
+              on 20 July 1969. His words &mdash; <em>&ldquo;That&rsquo;s one small step for
+              [a] man, one giant leap for mankind&rdquo;</em> &mdash; are among the most famous
+              ever spoken.
+            </p>
+          </div>
+        </div>
+
+        <!-- Astronaut 3 -->
+        <div class="astronaut-card">
+          <div class="astronaut-avatar">VT</div>
+          <div class="astronaut-info">
+            <h3>Valentina Tereshkova <em>(born 1937)</em></h3>
+            <p class="nation">&#127479;&#127482; Soviet Union &mdash; Cosmonaut</p>
+            <p>
+              The first woman in space, Tereshkova flew aboard Vostok 6 in June 1963,
+              completing 48 orbits of Earth over three days. She remains the only woman
+              to have flown a solo space mission.
+            </p>
+          </div>
+        </div>
+
+        <!-- Astronaut 4 -->
+        <div class="astronaut-card">
+          <div class="astronaut-avatar">SA</div>
+          <div class="astronaut-info">
+            <h3>Sally Ride <em>(1951&ndash;2012)</em></h3>
+            <p class="nation">&#127482;&#127480; United States &mdash; NASA Astronaut</p>
+            <p>
+              The first American woman in space, Sally Ride flew aboard Space Shuttle
+              Challenger in June 1983. She later became a prominent science educator and
+              advocate for STEM education for young women.
+            </p>
+          </div>
+        </div>
+
+        <!-- Astronaut 5 -->
+        <div class="astronaut-card">
+          <div class="astronaut-avatar">CM</div>
+          <div class="astronaut-info">
+            <h3>Chris Hadfield <em>(born 1959)</em></h3>
+            <p class="nation">&#127464;&#127462; Canada &mdash; CSA Astronaut</p>
+            <p>
+              The first Canadian to walk in space, Hadfield commanded the ISS during Expedition 35
+              in 2013. He became famous worldwide for sharing stunning photographs of Earth
+              from orbit and recording a music video in space.
+            </p>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Stats table: spacewalk records -->
+        <h2>Longest Cumulative Spacewalk Records</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Astronaut</th>
+                <th>Country</th>
+                <th>EVAs Performed</th>
+                <th>Total EVA Time</th>
+                <th>Agency</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Anatoly Solovyev</strong></td>
+                <td>Russia</td>
+                <td>16</td>
+                <td>82h 22m</td>
+                <td>RSA</td>
+              </tr>
+              <tr>
+                <td><strong>Peggy Whitson</strong></td>
+                <td>USA</td>
+                <td>10</td>
+                <td>60h 21m</td>
+                <td>NASA</td>
+              </tr>
+              <tr>
+                <td><strong>Fyodor Yurchikhin</strong></td>
+                <td>Russia</td>
+                <td>9</td>
+                <td>59h 29m</td>
+                <td>RSA</td>
+              </tr>
+              <tr>
+                <td><strong>Michael Lopez-Alegria</strong></td>
+                <td>USA</td>
+                <td>10</td>
+                <td>67h 40m</td>
+                <td>NASA</td>
+              </tr>
+              <tr>
+                <td><strong>Sunita Williams</strong></td>
+                <td>USA</td>
+                <td>7</td>
+                <td>50h 40m</td>
+                <td>NASA</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Notable records unordered list -->
+        <h2>Record-Breaking Space Feats</h2>
+        <ul class="space-list">
+          <li>
+            <strong>Longest continuous spaceflight</strong>: Valeri Polyakov spent
+            437 days and 18 hours aboard the Mir space station (1994&ndash;1995).
+          </li>
+          <li>
+            <strong>Most spaceflights</strong>: Franklin Chang-Diaz and Jerry Ross each
+            flew seven Space Shuttle missions.
+          </li>
+          <li>
+            <strong>Oldest person in space</strong>: William Shatner (the actor, aboard
+            Blue Origin&rsquo;s New Shepard in 2021) at age 90, in a suborbital flight.
+            For an orbital mission, John Glenn flew on the Space Shuttle at age 77 in 1998.
+          </li>
+          <li>
+            <strong>Farthest from Earth (crewed)</strong>: The Apollo 13 crew passed
+            400,171 km from Earth on the far side of the Moon during their 1970 emergency.
+          </li>
+        </ul>
+
+        <!-- Ordered list: Steps to become an astronaut -->
+        <h2>How to Become a NASA Astronaut</h2>
+        <p>
+          NASA regularly recruits new astronaut candidates. The selection process is rigorous
+          and competitive, with thousands of applicants vying for a handful of spots.
+        </p>
+        <ol class="space-ol">
+          <li>
+            <strong>Earn a degree</strong> &mdash; A bachelor&rsquo;s degree in engineering,
+            biological science, physical science, computer science, or mathematics is required
+            from an accredited institution.
+          </li>
+          <li>
+            <strong>Gain experience</strong> &mdash; At least two years of relevant professional
+            experience is required, or at least 1,000 hours of pilot-in-command time on a jet
+            aircraft.
+          </li>
+          <li>
+            <strong>Pass medical evaluations</strong> &mdash; Candidates must meet specific
+            physical requirements including vision, blood pressure, and height standards.
+          </li>
+          <li>
+            <strong>Complete training</strong> &mdash; Selected candidates undergo two years of
+            basic training covering spacewalking, robotics, Russian language, and aircraft flight.
+          </li>
+          <li>
+            <strong>Mission assignment</strong> &mdash; After graduation from the astronaut
+            candidate program, astronauts wait for their first mission assignment, which can
+            take several years.
+          </li>
+        </ol>
+
+        <!-- External link -->
+        <p>
+          Learn about current ISS crew and ongoing missions at
+          <a href="https://www.nasa.gov/international-space-station/" target="_blank" rel="noopener noreferrer">
+            NASA International Space Station</a>.
+        </p>
+
+        <p class="text-right">
+          <a href="#" class="back-link" style="display:inline-flex;">&#8679; Back to Top</a>
+        </p>
+
+      </main>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="footer-inner">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+          <p>&copy; 2025 Space Explorer &mdash; <span class="footer-name">Harmit Patel</span> &bull; COMP2057-91 &bull; University of Windsor</p>
+        </div>
+      </footer>
+
+      <button id="scrollTopBtn" title="Back to top"
+              style="position:fixed;bottom:30px;right:30px;
+                     background:var(--color-primary);color:var(--color-bg);
+                     border:none;border-radius:50%;width:44px;height:44px;
+                     font-size:1.2rem;cursor:pointer;opacity:0;
+                     transition:opacity 0.3s ease;z-index:999;">&#8679;</button>
+
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

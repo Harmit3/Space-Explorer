@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     index.html - Home Page for Space Explorer Website
+     Author: Harmit Patel - COMP2057-91
+     Course: Introduction to the Internet
+     Description: Entry point into the Space Explorer web site.
+                  Introduces the theme, provides site navigation,
+                  and showcases featured sections with animated
+                  star-field background using HTML5 Canvas.
+     ============================================================ -->
+<html lang="en">
+
+  <!-- HEAD: metadata, stylesheet links, and page title -->
+  <head>
+    <!-- Character encoding declaration for full Unicode support -->
+    <meta charset="UTF-8" />
+
+    <!-- Viewport tag for responsive design on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Brief description used by search engines -->
+    <meta name="description" content="Space Explorer - A journey through the cosmos." />
+
+    <!-- Page title shown in browser tab and bookmarks -->
+    <title>Space Explorer | Home</title>
+
+    <!-- Link to external CSS stylesheet for all page styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <!-- BODY: visible page content -->
+  <body>
+
+    <!-- Animated star field canvas rendered behind all content -->
+    <canvas id="starfield"></canvas>
+
+    <!-- Page wrapper ensures content sits above canvas (z-index) -->
+    <div class="page-wrapper">
+
+      <!-- ======================================================
+           HEADER & NAVIGATION
+           Sticky header with site logo and full navigation links.
+           ====================================================== -->
+      <header>
+        <div class="header-inner">
+
+          <!-- Site logo linking back to index.html -->
+          <a href="index.html" class="site-logo">SPACE<span>&nbsp;EXPLORER</span></a>
+
+          <!-- Primary navigation menu (visible on all pages) -->
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- ======================================================
+           HERO SECTION
+           Full-viewport welcome banner with animated headings.
+           ====================================================== -->
+      <section class="hero">
+
+        <!-- Small tagline label above main heading -->
+        <p class="hero-tag">&#9733; A Journey Through the Cosmos &#9733;</p>
+
+        <!-- Main hero heading using the h1 tag (page headline) -->
+        <h1>Explore the Universe</h1>
+
+        <!-- Descriptive subtext beneath the main heading -->
+        <p class="hero-desc">
+          Venture beyond our planet and discover the breathtaking wonders
+          of deep space &mdash; from blazing supernovae to ancient galaxies
+          billions of light-years away.
+        </p>
+
+        <!-- Call-to-action buttons linking to key pages -->
+        <div class="hero-btns">
+          <a href="solarsystem.html" class="btn-primary">Begin Journey</a>
+          <a href="missions.html"   class="btn-secondary">View Missions</a>
+        </div>
+      </section>
+
+      <!-- Author credit banner displayed below the hero -->
+      <div class="author-credit">
+        Created by <span>Harmit Patel</span> &nbsp;&bull;&nbsp; COMP2057-91 &nbsp;&bull;&nbsp; University of Windsor
+      </div>
+
+      <!-- ======================================================
+           MAIN CONTENT
+           Introduction paragraphs and featured topic cards.
+           ====================================================== -->
+      <main>
+
+        <!-- Horizontal rule used as a decorative section divider -->
+        <hr />
+
+        <!-- Section heading for the introduction area -->
+        <h2>Welcome to Space Explorer</h2>
+
+        <!-- Introduction paragraph 1 -->
+        <p>
+          Space Explorer is your gateway to the infinite expanse beyond Earth's atmosphere.
+          Whether you are a curious beginner or a passionate astronomy enthusiast, this site
+          brings you <strong>stunning facts</strong>, in-depth mission histories, and vivid
+          imagery of the cosmos. The universe is roughly <em>13.8 billion years old</em>,
+          and humanity has only begun to scratch the surface of its mysteries.
+        </p>
+
+        <!-- Paragraph with a bold keyword and line break for visual rhythm -->
+        <p>
+          From the rocky inner planets of our Solar System to the supermassive black holes
+          lurking at the centres of galaxies, every corner of space holds something
+          astonishing. <strong>Join us</strong> as we explore the science, the history,
+          and the awe-inspiring beauty of the universe around us.<br />
+          This site contains nine chapters of discovery &mdash; choose any topic from the
+          navigation menu above, or click <em>Begin Journey</em> to start from the Solar System.
+        </p>
+
+        <!-- Second horizontal rule for visual separation -->
+        <hr />
+
+        <!-- Section heading for the topic card grid -->
+        <h2>Explore Topics</h2>
+
+        <!-- Subtitle beneath section heading -->
+        <p class="page-subtitle">Nine Chapters of Cosmic Discovery</p>
+
+        <!-- Feature card grid: 8 topic cards linking to each page -->
+        <div class="card-grid">
+
+          <!-- Card 1: Solar System -->
+          <div class="card">
+            <span class="card-icon">&#9728;</span><!-- Special char: sun -->
+            <h3>Solar System</h3>
+            <p>
+              Our cosmic neighbourhood &mdash; eight planets, dwarf planets, moons,
+              asteroids, and comets all orbiting a middle-aged yellow dwarf star we call the Sun.
+            </p>
+            <br />
+            <a href="solarsystem.html" class="btn-secondary">Explore &rarr;</a>
+          </div>
+
+          <!-- Card 2: Black Holes -->
+          <div class="card">
+            <span class="card-icon">&#11044;</span><!-- Special char: circle -->
+            <h3>Black Holes</h3>
+            <p>
+              The most extreme objects in the universe &mdash; regions of spacetime where
+              gravity is so intense that nothing, not even light, can escape their pull.
+            </p>
+            <br />
+            <a href="blackholes.html" class="btn-secondary">Explore &rarr;</a>
+          </div>
+
+          <!-- Card 3: Space Missions -->
+          <div class="card">
+            <span class="card-icon">&#128640;</span><!-- Rocket emoji -->
+            <h3>Space Missions</h3>
+            <p>
+              Humanity&rsquo;s greatest adventures: from Apollo Moon landings to robotic
+              rovers on Mars and the Voyager probes still travelling through interstellar space.
+            </p>
+            <br />
+            <a href="missions.html" class="btn-secondary">Explore &rarr;</a>
+          </div>
+
+          <!-- Card 4: Galaxies -->
+          <div class="card">
+            <span class="card-icon">&#10024;</span><!-- Sparkle/galaxy -->
+            <h3>Galaxies</h3>
+            <p>
+              Vast island universes containing billions of stars, gas clouds, and dark matter.
+              Our own Milky Way is just one of an estimated two trillion galaxies in the observable universe.
+            </p>
+            <br />
+            <a href="galaxies.html" class="btn-secondary">Explore &rarr;</a>
+          </div>
+
+          <!-- Card 5: Telescopes -->
+          <div class="card">
+            <span class="card-icon">&#128301;</span><!-- Telescope emoji -->
+            <h3>Telescopes</h3>
+            <p>
+              From Galileo&rsquo;s first refractor to the James Webb Space Telescope,
+              discover the instruments that have revolutionised our understanding of the cosmos.
+            </p>
+            <br />
+            <a href="telescope.html" class="btn-secondary">Explore &rarr;</a>
+          </div>
+
+          <!-- Card 6: Astronauts -->
+          <div class="card">
+            <span class="card-icon">&#128119;</span><!-- Astronaut emoji -->
+            <h3>Astronauts</h3>
+            <p>
+              Meet the brave men and women who have ventured into the void of space,
+              pioneering human spaceflight and conducting science in orbit.
+            </p>
+            <br />
+            <a href="astronauts.html" class="btn-secondary">Explore &rarr;</a>
+          </div>
+
+          <!-- Card 7: Nebulae -->
+          <div class="card">
+            <span class="card-icon">&#10024;</span><!-- Sparkle: nebula glow -->
+            <h3>Nebulae</h3>
+            <p>
+              Stunning clouds of gas and dust where stars are born and die &mdash;
+              from glowing emission nebulae to the ghostly shells of planetary nebulae
+              left behind by dying Sun-like stars.
+            </p>
+            <br />
+            <a href="nebulae.html" class="btn-secondary">Explore &rarr;</a>
+          </div>
+
+          <!-- Card 8: Contact / Feedback -->
+          <div class="card">
+            <span class="card-icon">&#128233;</span><!-- Envelope emoji -->
+            <h3>Contact Us</h3>
+            <p>
+              Have questions, feedback, or ideas about space? We&rsquo;d love to hear from you.
+              Fill out our feedback form and help shape the future of this site.
+            </p>
+            <br />
+            <a href="contact.html" class="btn-secondary">Get In Touch &rarr;</a>
+          </div>
+
+          <!-- Card 8: Citations -->
+          <div class="card">
+            <span class="card-icon">&#128218;</span><!-- Book emoji -->
+            <h3>Citations</h3>
+            <p>
+              All sources of information and images used throughout this website are credited
+              here, ensuring transparency and proper attribution to their original creators.
+            </p>
+            <br />
+            <a href="citations.html" class="btn-secondary">View Sources &rarr;</a>
+          </div>
+
+        </div><!-- end .card-grid -->
+
+        <!-- Horizontal rule before stats section -->
+        <hr />
+
+        <!-- Solar system image as a featured visual on the home page -->
+        <div class="text-center">
+          <img src="solarsystem.jpg"
+               alt="Diagram of the eight planets of our Solar System in order from the Sun"
+               width="900" height="380"
+               style="width:100%;max-width:900px;height:auto;border-radius:12px;margin:20px auto;display:block;" />
+          <p style="color:var(--color-muted);font-size:0.8rem;">
+            <em>Our Solar System: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune</em>
+          </p>
+        </div>
+
+        <!-- Quick facts stats section -->
+        <h2>Universe in Numbers</h2>
+
+        <!-- Stat card grid for quick cosmological facts -->
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span class="stat-num">13.8B</span>
+            <span class="stat-label">Age in Years</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">2T</span>
+            <span class="stat-label">Galaxies</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">8</span>
+            <span class="stat-label">Solar Planets</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">93B</span>
+            <span class="stat-label">Light-Year Diameter</span>
+          </div>
+        </div>
+
+      </main><!-- end main -->
+
+      <!-- ======================================================
+           FOOTER
+           Copyright information and repeated navigation.
+           ====================================================== -->
+      <footer>
+        <div class="footer-inner">
+
+          <!-- Repeated navigation links in footer for convenience -->
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+
+          <!-- Copyright notice with special HTML entities -->
+          <p>&copy; 2025 Space Explorer &mdash; <span class="footer-name">Harmit Patel</span> &bull; COMP2057-91 &bull; University of Windsor</p>
+        </div>
+      </footer>
+
+      <!-- Floating scroll-to-top button -->
+      <button id="scrollTopBtn" title="Back to top"
+              style="position:fixed;bottom:30px;right:30px;
+                     background:var(--color-primary);color:var(--color-bg);
+                     border:none;border-radius:50%;width:44px;height:44px;
+                     font-size:1.2rem;cursor:pointer;opacity:0;
+                     transition:opacity 0.3s ease;z-index:999;">&#8679;</button>
+
+    </div><!-- end .page-wrapper -->
+
+    <!-- Link to the shared JavaScript file (loaded at end of body for performance) -->
+    <script src="main.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     contact.html - Contact / Feedback Form Page
+     Author: Harmit Patel - COMP2057-91
+     Description: Contains the site feedback form with input
+                  fields for name, email, subject, message,
+                  and rating. Demonstrates form elements,
+                  HTML special characters, and the student
+                  e-mail address visible at the bottom.
+                  JavaScript handles form submission and
+                  displays a success confirmation message.
+     ============================================================ -->
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact the Space Explorer team with your questions and feedback." />
+    <title>Space Explorer | Contact Us</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Page-specific styles for the form success message -->
+    <style>
+      /* Success confirmation box shown after valid form submission */
+      #formSuccess {
+        display:       none; /* Hidden by default; shown via JavaScript */
+        background:    rgba(0,212,255,0.08);
+        border:        1px solid var(--color-primary);
+        border-radius: 8px;
+        padding:       40px;
+        text-align:    center;
+        margin-top:    40px;
+        max-width:     680px;
+      }
+      /* Large checkmark icon in success message */
+      #formSuccess .success-icon {
+        font-size:   3rem;
+        display:     block;
+        margin-bottom: 16px;
+        animation:   glowPulse 2s ease-in-out infinite;
+      }
+      /* Success heading text */
+      #formSuccess h3 {
+        color:       var(--color-primary);
+        font-size:   1.2rem;
+        margin-bottom: 10px;
+      }
+      /* Contact info grid layout */
+      .contact-grid {
+        display:               grid;
+        grid-template-columns: 1fr 1fr;
+        gap:                   16px;
+        margin:                24px 0;
+      }
+      /* Individual contact info item card */
+      .contact-item {
+        background:    var(--color-card);
+        border:        1px solid var(--color-border);
+        border-radius: 8px;
+        padding:       20px;
+        text-align:    center;
+      }
+      /* Icon for each contact item */
+      .contact-item .ci-icon {
+        font-size:     1.8rem;
+        margin-bottom: 10px;
+        display:       block;
+      }
+      /* Label text for contact info */
+      .contact-item .ci-label {
+        font-family:    var(--font-display);
+        font-size:      0.65rem;
+        letter-spacing: 0.15em;
+        color:          var(--color-muted);
+        text-transform: uppercase;
+        margin-bottom:  6px;
+      }
+      /* Value/detail text for contact info */
+      .contact-item .ci-value {
+        color:       var(--color-text);
+        font-size:   0.9rem;
+        font-weight: 300;
+      }
+      /* Responsive: stack contact grid on small screens */
+      @media (max-width: 600px) {
+        .contact-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="starfield"></canvas>
+    <div class="page-wrapper">
+
+      <!-- HEADER -->
+      <header>
+        <div class="header-inner">
+          <a href="index.html" class="site-logo">SPACE<span>&nbsp;EXPLORER</span></a>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <a href="index.html" class="back-link">Back to Home</a>
+
+        <h1 class="page-title">Contact Us</h1>
+        <p class="page-subtitle">&#128233; Send Us Your Thoughts</p>
+
+        <!-- Introduction paragraphs -->
+        <!-- Astronaut profile image adding visual interest to the contact page -->
+        <div class="text-center">
+          <img src="astronaut_profile.jpg"
+               alt="International Space Station in orbit above Earth"
+               width="600" height="400"
+               style="width:100%;max-width:600px;height:auto;border-radius:12px;margin:20px auto;display:block;" />
+          <p style="color:var(--color-muted);font-size:0.8rem;">
+            <em>Illustration of the International Space Station orbiting Earth</em>
+          </p>
+        </div>
+        <p>
+          We love hearing from fellow space enthusiasts! Whether you have a question about
+          a topic covered on this site, spotted an inaccuracy you&rsquo;d like to report,
+          or simply want to share your passion for astronomy, we&rsquo;d be thrilled to
+          hear from you. Fill out the feedback form below and we will get back to you
+          as soon as possible.
+        </p>
+
+        <p>
+          All feedback helps us improve Space Explorer and make it a better resource for
+          students, teachers, and curious minds of all ages. Your message is important to us &mdash;
+          <strong>no question is too simple</strong> and no curiosity too small. Space is for everyone,
+          and so is this site.
+        </p>
+
+        <hr />
+
+        <!-- Contact info cards grid -->
+        <h2>Get In Touch</h2>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <span class="ci-icon">&#128233;</span>
+            <div class="ci-label">Email</div>
+            <div class="ci-value">
+              <!-- Visible and usable email link as required by assignment -->
+              <a href="mailto:patel1hm@uwindsor.ca"
+                 style="color:var(--color-primary);text-decoration:none;">
+                patel1hm@uwindsor.ca
+              </a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="ci-icon">&#127979;</span>
+            <div class="ci-label">Institution</div>
+            <div class="ci-value">University of Windsor<br />School of Computer Science</div>
+          </div>
+          <div class="contact-item">
+            <span class="ci-icon">&#128218;</span>
+            <div class="ci-label">Course</div>
+            <div class="ci-value">COMP2057 &mdash; Introduction to the Internet</div>
+          </div>
+          <div class="contact-item">
+            <span class="ci-icon">&#128337;</span>
+            <div class="ci-label">Response Time</div>
+            <div class="ci-value">Typically within 48&ndash;72 hours</div>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- ====================================================
+             FEEDBACK FORM - CENTERED ON PAGE
+             Demonstrates form elements: input, select, textarea,
+             radio buttons, checkbox, and submit button.
+             Form is centred using the form-section flex wrapper.
+             ==================================================== -->
+        <h2 style="text-align:center;">Feedback Form</h2>
+
+        <!-- form-section: flex wrapper that centres the form card -->
+        <div class="form-section">
+          <!-- form-container: the styled card that holds the form -->
+          <div class="form-container">
+          <form id="contactForm" method="post" action="#">
+
+            <!-- Name input field -->
+            <label for="fname">Your Full Name <span style="color:#ff6060;">*</span></label>
+            <input type="text"
+                   id="fname"
+                   name="fullname"
+                   placeholder="e.g. Neil Armstrong"
+                   maxlength="100"
+                   required />
+
+            <!-- Email input field -->
+            <label for="femail">Email Address <span style="color:#ff6060;">*</span></label>
+            <input type="email"
+                   id="femail"
+                   name="email"
+                   placeholder="e.g. neil@example.com"
+                   maxlength="150"
+                   required />
+
+            <!-- Subject dropdown select -->
+            <label for="fsubject">Subject</label>
+            <select id="fsubject" name="subject">
+              <option value="">-- Select a Subject --</option>
+              <option value="general">General Question</option>
+              <option value="correction">Content Correction</option>
+              <option value="suggestion">Suggestion / Feedback</option>
+              <option value="partnership">Partnership / Collaboration</option>
+              <option value="other">Other</option>
+            </select>
+
+            <!-- Rating radio buttons -->
+            <label>Overall Site Rating</label>
+            <div style="display:flex;gap:16px;flex-wrap:wrap;margin:8px 0 16px;">
+              <!-- Radio button group for star rating -->
+              <label style="font-family:var(--font-display);font-size:0.75rem;
+                            color:var(--color-text);letter-spacing:0.05em;
+                            display:flex;align-items:center;gap:6px;
+                            cursor:pointer;text-transform:none;">
+                <input type="radio" name="rating" value="5"
+                       style="width:auto;accent-color:var(--color-primary);" />
+                &#9733;&#9733;&#9733;&#9733;&#9733; Excellent
+              </label>
+              <label style="font-family:var(--font-display);font-size:0.75rem;
+                            color:var(--color-text);letter-spacing:0.05em;
+                            display:flex;align-items:center;gap:6px;
+                            cursor:pointer;text-transform:none;">
+                <input type="radio" name="rating" value="4"
+                       style="width:auto;accent-color:var(--color-primary);" />
+                &#9733;&#9733;&#9733;&#9733; Good
+              </label>
+              <label style="font-family:var(--font-display);font-size:0.75rem;
+                            color:var(--color-text);letter-spacing:0.05em;
+                            display:flex;align-items:center;gap:6px;
+                            cursor:pointer;text-transform:none;">
+                <input type="radio" name="rating" value="3"
+                       style="width:auto;accent-color:var(--color-primary);" />
+                &#9733;&#9733;&#9733; Average
+              </label>
+            </div>
+
+            <!-- Message textarea -->
+            <label for="fmessage">Your Message</label>
+            <textarea id="fmessage"
+                      name="message"
+                      placeholder="Share your thoughts, questions, or feedback about Space Explorer..."></textarea>
+
+            <!-- Newsletter checkbox -->
+            <label style="flex-direction:row;align-items:center;gap:10px;
+                          margin-top:16px;cursor:pointer;display:flex;">
+              <input type="checkbox"
+                     name="newsletter"
+                     id="fnewsletter"
+                     style="width:auto;accent-color:var(--color-primary);" />
+              <span style="font-family:var(--font-display);font-size:0.7rem;
+                           letter-spacing:0.1em;color:var(--color-muted);">
+                Subscribe to space updates newsletter
+              </span>
+            </label>
+
+            <!-- Submit button wrapped in centred div -->
+            <div class="form-btn-wrap">
+              <button type="submit" class="btn-primary">
+                &#128640; Send Message
+              </button>
+            </div>
+
+          </form><!-- end form -->
+
+          <!-- Success message: hidden by default, shown by JS after valid submission -->
+          <div id="formSuccess">
+            <span class="success-icon">&#10004;</span>
+            <h3>Message Transmitted!</h3>
+            <p>
+              Thank you for reaching out to Space Explorer. Your message has been received
+              and we will respond to you at the email address provided within 48&ndash;72 hours.
+              <em>Ad astra!</em>
+            </p>
+          </div>
+
+          <!-- Visible email address at bottom of form page (required by assignment) -->
+          <p class="email-display">
+            Direct email: <a href="mailto:patel1hm@uwindsor.ca">patel1hm@uwindsor.ca</a>
+          </p>
+
+        </div><!-- end .form-container -->
+        </div><!-- end .form-section -->
+
+
+        <p class="text-right" style="margin-top:40px;">
+          <a href="#" class="back-link" style="display:inline-flex;">&#8679; Back to Top</a>
+        </p>
+
+      </main>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="footer-inner">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+          <p>&copy; 2025 Space Explorer &mdash; <span class="footer-name">Harmit Patel</span> &bull; COMP2057-91 &bull; University of Windsor</p>
+        </div>
+      </footer>
+
+      <button id="scrollTopBtn" title="Back to top"
+              style="position:fixed;bottom:30px;right:30px;
+                     background:var(--color-primary);color:var(--color-bg);
+                     border:none;border-radius:50%;width:44px;height:44px;
+                     font-size:1.2rem;cursor:pointer;opacity:0;
+                     transition:opacity 0.3s ease;z-index:999;">&#8679;</button>
+
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

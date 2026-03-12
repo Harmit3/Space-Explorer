@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     nebulae.html - Nebulae Page
+     Author: Harmit Patel - COMP2057-91
+     Course: Introduction to the Internet
+     Description: Explores the different types of nebulae, how
+                  they form stars, and their role in the lifecycle
+                  of the universe. Demonstrates ordered list,
+                  unordered list, definition list, table, image,
+                  special characters, bold, italic, strong, em tags,
+                  and paragraph content with hr and br tags.
+     ============================================================ -->
+<html lang="en">
+
+  <!-- HEAD section: metadata, title, and stylesheet link -->
+  <head>
+    <!-- Character encoding for full Unicode support -->
+    <meta charset="UTF-8" />
+
+    <!-- Viewport meta for responsive display on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Brief description for search engines -->
+    <meta name="description" content="Explore nebulae - the breathtaking clouds of gas and dust where stars are born and die." />
+
+    <!-- Page title shown in the browser tab -->
+    <title>Space Explorer | Nebulae</title>
+
+    <!-- Link to the shared external CSS stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Page-specific styles for nebula colour accents -->
+    <style>
+      /* Glowing colour band to represent nebula hues */
+      .nebula-banner {
+        background: linear-gradient(135deg,
+          rgba(255,50,50,0.15) 0%,
+          rgba(100,50,255,0.2) 33%,
+          rgba(50,200,255,0.15) 66%,
+          rgba(50,255,150,0.1) 100%);
+        border: 1px solid rgba(123,47,255,0.3);
+        border-radius: 12px;
+        padding: 20px;
+        margin: 24px 0;
+        text-align: center;
+        font-style: italic;
+        color: var(--color-muted);
+      }
+    </style>
+  </head>
+
+  <!-- BODY: all visible page content -->
+  <body>
+
+    <!-- Animated star-field canvas (rendered by main.js) -->
+    <canvas id="starfield"></canvas>
+
+    <!-- Page wrapper ensures content appears above the canvas -->
+    <div class="page-wrapper">
+
+      <!-- ======================================================
+           HEADER & NAVIGATION
+           Sticky header linking to all site pages.
+           ====================================================== -->
+      <header>
+        <div class="header-inner">
+
+          <!-- Site logo linking back to the home page -->
+          <a href="index.html" class="site-logo">SPACE<span>&nbsp;EXPLORER</span></a>
+
+          <!-- Primary navigation menu -->
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- ======================================================
+           MAIN CONTENT
+           All primary page content lives within this main element.
+           ====================================================== -->
+      <main>
+
+        <!-- Back link navigation for easy return to the home page -->
+        <a href="index.html" class="back-link">&#8592; Back to Home</a>
+
+        <!-- Page heading using h1 tag (main headline) -->
+        <h1 class="page-title">Nebulae</h1>
+
+        <!-- Page subtitle with special character for a star symbol -->
+        <p class="page-subtitle">&#10024; The Stellar Nurseries of the Universe</p>
+
+        <!-- Nebula illustration image with alt text and dimensions -->
+        <div class="text-center">
+          <img src="nebulae.jpg"
+               alt="Colourful illustration of a nebula with glowing gas clouds in red, purple, and blue hues surrounding a bright central star"
+               width="600" height="400"
+               style="width:100%;max-width:600px;height:auto;border-radius:12px;margin:20px auto;display:block;" />
+          <!-- Image caption using italic text -->
+          <p style="color:var(--color-muted);font-size:0.8rem;">
+            <em>Illustration of a glowing nebula &mdash; a cloud of gas and dust lit by newborn stars within</em>
+          </p>
+        </div>
+
+        <!-- Horizontal rule used as a visual section divider -->
+        <hr />
+
+        <!-- Introduction paragraphs with bold, strong, italic, and em tags -->
+        <h2>What Is a Nebula?</h2>
+
+        <p>
+          A <strong>nebula</strong> (plural: <em>nebulae</em>) is a vast cloud of gas and dust
+          floating in interstellar space. The word comes from the Latin for &ldquo;cloud&rdquo; or
+          &ldquo;mist.&rdquo; Nebulae are among the most <strong>visually spectacular</strong>
+          objects in the universe, glowing in brilliant colours caused by the ionising radiation
+          from nearby stars heating the surrounding gas to extreme temperatures. <br />
+          Hydrogen, helium, oxygen, and other elements emit characteristic colours when energised,
+          producing the painterly reds, blues, and greens that make nebulae so iconic in
+          astronomical photography.
+        </p>
+
+        <p>
+          Nebulae play a <em>fundamental role</em> in the life cycle of stars. They are both
+          <strong>stellar nurseries</strong> &mdash; regions where new stars are born from
+          collapsing clouds of gas and dust &mdash; and the remnants of <strong>dying stars</strong>
+          that have shed their outer layers back into space. In this sense, every atom in our
+          bodies was once part of a nebula, forged inside a long-dead star and expelled into
+          the cosmos billions of years ago.
+        </p>
+
+        <!-- Decorative nebula colour banner with special characters -->
+        <div class="nebula-banner">
+          &#127774; Red: Hydrogen-alpha emissions &nbsp;&bull;&nbsp;
+          &#128309; Blue: Doubly-ionised oxygen &nbsp;&bull;&nbsp;
+          &#128994; Green: Singly-ionised oxygen &nbsp;&bull;&nbsp;
+          &#128308; Pink: Hydrogen and ionised helium
+        </div>
+
+        <!-- Second horizontal rule -->
+        <hr />
+
+        <!-- Types of nebulae: definition list (dl) -->
+        <h2>Types of Nebulae</h2>
+
+        <p>
+          Astronomers classify nebulae into several categories based on how they form and
+          how they interact with light. Each type tells a different story about the life
+          cycle of stars and the composition of the interstellar medium.
+        </p>
+
+        <!-- Definition list demonstrating dt and dd tags -->
+        <dl class="space-dl">
+
+          <!-- Term 1 -->
+          <dt>Emission Nebulae</dt>
+          <dd>
+            The most colourful and photographed type of nebula. Emission nebulae are clouds of
+            ionised gas that emit light of specific wavelengths. The energy source is usually one
+            or more hot young stars embedded within or near the cloud. The <em>Orion Nebula</em>
+            (M42) is one of the most famous examples, visible to the naked eye as the middle
+            &ldquo;star&rdquo; of Orion&rsquo;s sword.
+          </dd>
+
+          <!-- Term 2 -->
+          <dt>Reflection Nebulae</dt>
+          <dd>
+            Unlike emission nebulae, reflection nebulae do not emit their own light. Instead,
+            they <strong>scatter</strong> light from nearby stars, much like fog scattering
+            light from a streetlamp. They typically appear blue because dust particles scatter
+            shorter wavelengths more efficiently. The Pleiades star cluster is surrounded by
+            a beautiful reflection nebula.
+          </dd>
+
+          <!-- Term 3 -->
+          <dt>Dark Nebulae</dt>
+          <dd>
+            Dense, cold clouds of gas and dust so thick that they block the light from objects
+            behind them. Dark nebulae appear as silhouettes against brighter backgrounds.
+            The famous <em>Horsehead Nebula</em> in Orion is a dark nebula seen against the
+            glowing backdrop of an emission nebula. These regions are often sites of active
+            star formation hidden from visible-light telescopes.
+          </dd>
+
+          <!-- Term 4 -->
+          <dt>Planetary Nebulae</dt>
+          <dd>
+            Despite their name, planetary nebulae have nothing to do with planets. They are
+            shells of gas expelled by a dying star in the late stage of its life, when a
+            Sun-like star exhausts its fuel and swells into a red giant before shedding its
+            outer layers. The remaining hot core (a white dwarf) ionises the expelled gas,
+            creating a glowing shell. The <em>Ring Nebula</em> (M57) is a classic example,
+            visible through a small telescope.
+          </dd>
+
+          <!-- Term 5 -->
+          <dt>Supernova Remnants</dt>
+          <dd>
+            When a massive star explodes in a <strong>supernova</strong>, it releases enormous
+            amounts of energy and hurls its outer layers into space at speeds up to 30,000 km/s.
+            The expanding shell of gas and dust forms a supernova remnant. The
+            <em>Crab Nebula</em> (M1) is the remnant of a supernova observed by Chinese
+            astronomers in 1054 AD. These remnants enrich the interstellar medium with heavy
+            elements forged inside the star.
+          </dd>
+
+        </dl><!-- end dl -->
+
+        <!-- Horizontal rule before the ordered list section -->
+        <hr />
+
+        <!-- Top five nebulae: ordered list (ol) -->
+        <h2>Five Most Famous Nebulae</h2>
+
+        <p>
+          Throughout history, certain nebulae have captured the imagination of astronomers
+          and the general public alike. Here are five of the most celebrated nebulae ever studied.
+        </p>
+
+        <!-- Ordered list with at least 3 items -->
+        <ol class="space-ol">
+
+          <li>
+            <strong>The Orion Nebula (M42)</strong> &mdash; Located 1,344 light-years from
+            Earth in the constellation Orion, this is the closest large star-forming region
+            to our Solar System. It contains thousands of young stars and is visible to
+            the naked eye on clear nights, making it the most-observed deep-sky object in history.
+          </li>
+
+          <li>
+            <strong>The Crab Nebula (M1)</strong> &mdash; A supernova remnant about 6,500
+            light-years away, expanding at roughly 1,500 km/s. At its centre lies a rapidly
+            spinning neutron star (pulsar) that rotates 30 times per second. It was first
+            recorded by Chinese, Japanese, and Arab astronomers when the supernova brightened
+            the sky in 1054 AD.
+          </li>
+
+          <li>
+            <strong>The Eagle Nebula (M16)</strong> &mdash; Home to the iconic
+            <em>Pillars of Creation</em>, columns of interstellar gas and dust photographed
+            by the Hubble Space Telescope in 1995. These towering pillars, up to 4 light-years
+            tall, are regions of active star formation and became one of the most famous
+            astronomical images ever taken.
+          </li>
+
+          <li>
+            <strong>The Ring Nebula (M57)</strong> &mdash; A planetary nebula in the
+            constellation Lyra, about 2,300 light-years away. It appears as a tiny glowing
+            ring through a small telescope and represents the final fate of a Sun-like star.
+            The dying white dwarf at its centre is 200 times hotter than our Sun.
+          </li>
+
+          <li>
+            <strong>The Helix Nebula (NGC 7293)</strong> &mdash; The largest planetary nebula
+            in apparent size as seen from Earth, spanning about 2.5 light-years in diameter.
+            Located only 655 light-years away in the constellation Aquarius, it has earned
+            the nickname &ldquo;the Eye of God&rdquo; due to its striking appearance in
+            Hubble imagery.
+          </li>
+
+        </ol><!-- end ol -->
+
+        <!-- Horizontal rule before the table -->
+        <hr />
+
+        <!-- Nebulae comparison table -->
+        <h2>Nebulae at a Glance</h2>
+
+        <!-- Table wrapper div for horizontal scrolling on small screens -->
+        <div class="table-wrap">
+          <table>
+            <!-- Table header row -->
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Distance (Light-Years)</th>
+                <th>Constellation</th>
+                <th>Notable Feature</th>
+              </tr>
+            </thead>
+            <!-- Table body rows -->
+            <tbody>
+              <tr>
+                <td><strong>Orion Nebula (M42)</strong></td>
+                <td>Emission</td>
+                <td>1,344</td>
+                <td>Orion</td>
+                <td>Closest star-forming region; naked-eye visible</td>
+              </tr>
+              <tr>
+                <td><strong>Crab Nebula (M1)</strong></td>
+                <td>Supernova Remnant</td>
+                <td>6,500</td>
+                <td>Taurus</td>
+                <td>Contains a pulsar spinning 30 times per second</td>
+              </tr>
+              <tr>
+                <td><strong>Eagle Nebula (M16)</strong></td>
+                <td>Emission</td>
+                <td>7,000</td>
+                <td>Serpens</td>
+                <td>Home to the iconic &ldquo;Pillars of Creation&rdquo;</td>
+              </tr>
+              <tr>
+                <td><strong>Ring Nebula (M57)</strong></td>
+                <td>Planetary</td>
+                <td>2,300</td>
+                <td>Lyra</td>
+                <td>Classic example of a dying Sun-like star&rsquo;s remnant</td>
+              </tr>
+              <tr>
+                <td><strong>Helix Nebula (NGC 7293)</strong></td>
+                <td>Planetary</td>
+                <td>655</td>
+                <td>Aquarius</td>
+                <td>Largest apparent-size planetary nebula; &ldquo;Eye of God&rdquo;</td>
+              </tr>
+              <tr>
+                <td><strong>Horsehead Nebula (B33)</strong></td>
+                <td>Dark</td>
+                <td>1,500</td>
+                <td>Orion</td>
+                <td>Iconic dark silhouette against a glowing emission nebula</td>
+              </tr>
+            </tbody>
+          </table>
+        </div><!-- end .table-wrap -->
+
+        <!-- Horizontal rule before unordered list -->
+        <hr />
+
+        <!-- Key facts: unordered list (ul) -->
+        <h2>Fascinating Nebula Facts</h2>
+
+        <!-- Unordered list with at least 3 items -->
+        <ul class="space-list">
+
+          <li>
+            <strong>Scale beyond imagination</strong> &mdash; The largest known nebula,
+            the <em>Tarantula Nebula</em> in the Large Magellanic Cloud, stretches roughly
+            1,000 light-years across. If it were at the distance of the Orion Nebula, it would
+            span 60 degrees of the sky &mdash; covering more than the width of your hand held
+            at arm&rsquo;s length.
+          </li>
+
+          <li>
+            <strong>The building blocks of life</strong> &mdash; Nebulae contain complex
+            organic molecules, including amino acids and alcohols, detected through radio
+            telescope observations. The raw ingredients for life are scattered throughout
+            the interstellar medium in nebular clouds.
+          </li>
+
+          <li>
+            <strong>James Webb&rsquo;s nebula discoveries</strong> &mdash; The James Webb
+            Space Telescope has revealed unprecedented detail inside nebulae, including
+            newly forming stellar systems (proto-planetary discs) inside the Orion Nebula
+            that were previously hidden from Hubble by thick dust clouds.
+          </li>
+
+          <li>
+            <strong>Invisible to the naked eye</strong> &mdash; Most nebulae are invisible
+            without a telescope because they emit light primarily in infrared and ultraviolet
+            wavelengths. Space telescopes like Spitzer, Chandra, and Webb image nebulae across
+            the electromagnetic spectrum and translate those wavelengths into visible-light
+            colour images.
+          </li>
+
+          <li>
+            <strong>Our Sun will become a nebula</strong> &mdash; In approximately 5 billion
+            years, the Sun will exhaust its hydrogen fuel, expand into a red giant, and shed
+            its outer layers into a planetary nebula. The remaining core will cool slowly as
+            a white dwarf, surrounded by a glowing shell of expelled gas.
+          </li>
+
+        </ul><!-- end ul -->
+
+        <!-- External link to a reputable astronomy resource -->
+        <p>
+          Explore stunning nebula images and the latest research at the
+          <a href="https://www.nasa.gov/science/universe/nebulas/" target="_blank" rel="noopener noreferrer">
+            NASA Nebulae Science Page</a>.
+        </p>
+
+        <!-- Line break for spacing before back-to-top link -->
+        <br />
+
+        <!-- Back-to-top internal navigation link -->
+        <p class="text-right">
+          <a href="#" class="back-link" style="display:inline-flex;">&#8679; Back to Top</a>
+        </p>
+
+      </main><!-- end main -->
+
+      <!-- ======================================================
+           FOOTER
+           Repeated navigation and copyright notice.
+           ====================================================== -->
+      <footer>
+        <div class="footer-inner">
+
+          <!-- Footer navigation repeats the header navigation -->
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+
+          <!-- Copyright notice using special HTML entities -->
+          <p>&copy; 2025 Space Explorer &mdash; <span class="footer-name">Harmit Patel</span> &bull; COMP2057-91 &bull; University of Windsor</p>
+        </div>
+      </footer>
+
+      <!-- Floating scroll-to-top button (styled inline) -->
+      <button id="scrollTopBtn" title="Back to top"
+              style="position:fixed;bottom:30px;right:30px;
+                     background:var(--color-primary);color:var(--color-bg);
+                     border:none;border-radius:50%;width:44px;height:44px;
+                     font-size:1.2rem;cursor:pointer;opacity:0;
+                     transition:opacity 0.3s ease;z-index:999;">&#8679;</button>
+
+    </div><!-- end .page-wrapper -->
+
+    <!-- External JavaScript file loaded at end of body for performance -->
+    <script src="main.js"></script>
+
+  </body>
+</html>

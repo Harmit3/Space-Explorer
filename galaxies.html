@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     galaxies.html - Galaxies Page
+     Author: Harmit Patel - COMP2057-91
+     Description: Covers the major types of galaxies, the
+                  structure of the Milky Way, and highlights
+                  of famous galaxies observed by telescopes.
+                  Demonstrates table, definition list, and
+                  strong/em text formatting.
+     ============================================================ -->
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore the vast island universes called galaxies, from spirals to ellipticals." />
+    <title>Space Explorer | Galaxies</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Page-specific animated galaxy visual style -->
+    <style>
+      /* CSS art: animated spiral galaxy suggestion */
+      .galaxy-visual {
+        width:     260px;
+        height:    260px;
+        margin:    24px auto;
+        position:  relative;
+        display:   flex;
+        align-items: center;
+        justify-content: center;
+      }
+      /* Core glow of galaxy */
+      .galaxy-core {
+        width:         70px;
+        height:        70px;
+        border-radius: 50%;
+        background:    radial-gradient(circle, #fff 0%, #ffd700 40%, rgba(255,100,50,0.5) 70%, transparent 100%);
+        box-shadow:    0 0 40px rgba(255,215,0,0.6), 0 0 80px rgba(255,100,50,0.3);
+        z-index:       2;
+        position:      relative;
+        animation:     glowPulse 3s ease-in-out infinite;
+      }
+      /* Spiral arm 1 */
+      .galaxy-arm1 {
+        position:      absolute;
+        width:         200px;
+        height:        200px;
+        border-radius: 50%;
+        border:        3px solid transparent;
+        border-top:    3px solid rgba(123,47,255,0.5);
+        border-right:  3px solid rgba(0,212,255,0.3);
+        animation:     spin 12s linear infinite;
+      }
+      /* Spiral arm 2 (counter-rotated starting position) */
+      .galaxy-arm2 {
+        position:      absolute;
+        width:         240px;
+        height:        240px;
+        border-radius: 50%;
+        border:        2px solid transparent;
+        border-bottom: 2px solid rgba(123,47,255,0.3);
+        border-left:   2px solid rgba(0,212,255,0.2);
+        animation:     spin 18s linear infinite reverse;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="starfield"></canvas>
+    <div class="page-wrapper">
+
+      <!-- HEADER -->
+      <header>
+        <div class="header-inner">
+          <a href="index.html" class="site-logo">SPACE<span>&nbsp;EXPLORER</span></a>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <a href="index.html" class="back-link">Back to Home</a>
+
+        <h1 class="page-title">Galaxies</h1>
+        <p class="page-subtitle">&#10024; Island Universes Beyond Our Own</p>
+
+        <!-- Animated galaxy CSS art -->
+        <div class="galaxy-visual">
+          <div class="galaxy-arm2"></div>
+          <div class="galaxy-arm1"></div>
+          <div class="galaxy-core"></div>
+        </div>
+
+        <!-- Introduction -->
+        <!-- Andromeda galaxy image with descriptive alt text -->
+        <div class="text-center">
+          <img src="andromeda.jpg"
+               alt="The Andromeda Galaxy (M31), the nearest spiral galaxy to the Milky Way"
+               width="600" height="400"
+               style="width:100%;max-width:600px;height:auto;border-radius:12px;margin:20px auto;display:block;" />
+          <p style="color:var(--color-muted);font-size:0.8rem;">
+            <em>Illustration of the Andromeda Galaxy (M31) &mdash; our nearest large galactic neighbour</em>
+          </p>
+        </div>
+        <p>
+          A galaxy is a gravitationally bound system of stars, stellar remnants, interstellar
+          gas, dust, and <strong>dark matter</strong>. The word galaxy comes from the Greek
+          <em>galaxias</em>, meaning &ldquo;milky&rdquo; &mdash; a reference to our own
+          Milky Way galaxy. Galaxies range in size from dwarf galaxies with just a few hundred
+          million stars to giant ellipticals containing <em>one hundred trillion</em> stars.
+        </p>
+
+        <p>
+          The observable universe contains an estimated <strong>two trillion galaxies</strong>,
+          each separated from its neighbours by vast empty voids. Galaxies are rarely isolated;
+          they cluster together under gravity into groups, clusters, and superclusters, forming
+          the cosmic web that is the large-scale structure of the universe. Understanding how
+          galaxies form and evolve is one of the central challenges of modern astrophysics.
+        </p>
+
+        <hr />
+
+        <!-- Galaxy types definition list -->
+        <h2>Types of Galaxies</h2>
+        <p>
+          American astronomer Edwin Hubble developed the first classification system for galaxies
+          in 1926, known as the Hubble Sequence or Hubble Tuning Fork. The system classifies
+          galaxies into four main morphological types based on their visual appearance.
+        </p>
+
+        <dl class="space-dl">
+
+          <dt>Spiral Galaxies</dt>
+          <dd>
+            The most visually striking type, spiral galaxies have a flat, rotating disc with
+            curved arms of stars, gas, and dust spiralling outward from a bright central bulge.
+            The Milky Way and the Andromeda Galaxy (M31) are both spirals.
+            Approximately <em>60%</em> of all observed galaxies are spirals.
+          </dd>
+
+          <dt>Barred Spiral Galaxies</dt>
+          <dd>
+            A subtype of spiral galaxies where the spiral arms emerge from the ends of a
+            central bar-shaped structure of stars, rather than directly from the nucleus.
+            The Milky Way is now classified as a barred spiral (SBbc). About
+            two-thirds of all known spiral galaxies have bars.
+          </dd>
+
+          <dt>Elliptical Galaxies</dt>
+          <dd>
+            Smooth, featureless, roughly ellipsoidal systems containing mostly old,
+            red stars with little interstellar gas or dust. They range from nearly
+            spherical (E0) to very elongated (E7). The largest galaxies in the universe
+            are giant ellipticals found at the centres of galaxy clusters.
+          </dd>
+
+          <dt>Lenticular Galaxies</dt>
+          <dd>
+            Intermediate between spirals and ellipticals, lenticular galaxies have a disc
+            structure but no distinct spiral arms. They contain older stellar populations
+            and have largely exhausted their star-forming gas and dust.
+          </dd>
+
+          <dt>Irregular Galaxies</dt>
+          <dd>
+            Galaxies that do not fit into the regular Hubble classification, often because
+            they have been distorted by gravitational interactions or mergers with
+            other galaxies. The Large and Small Magellanic Clouds, two satellite galaxies
+            of the Milky Way, are examples of irregular galaxies.
+          </dd>
+
+        </dl>
+
+        <hr />
+
+        <!-- Notable galaxies: unordered list -->
+        <h2>Famous Galaxies</h2>
+
+        <ul class="space-list">
+          <li>
+            <strong>The Milky Way</strong> &mdash; Our home galaxy, a barred spiral
+            approximately 100,000 light-years in diameter containing 100&ndash;400 billion stars.
+            The Solar System is located about 26,000 light-years from the galactic centre.
+          </li>
+          <li>
+            <strong>Andromeda Galaxy (M31)</strong> &mdash; The nearest large spiral galaxy,
+            2.537 million light-years away and containing roughly one trillion stars.
+            Andromeda is on a collision course with the Milky Way and will merge
+            in approximately 4.5 billion years.
+          </li>
+          <li>
+            <strong>Triangulum Galaxy (M33)</strong> &mdash; The third-largest member of the
+            Local Group of galaxies, containing about 40 billion stars. It is the most
+            distant object visible to the naked eye under dark skies.
+          </li>
+          <li>
+            <strong>Sombrero Galaxy (M104)</strong> &mdash; An iconic edge-on spiral galaxy
+            with a bright nucleus and prominent dust lane, located 31.1 million light-years away.
+            Its bright bulge resembles a sombrero hat.
+          </li>
+          <li>
+            <strong>Whirlpool Galaxy (M51)</strong> &mdash; A classic grand-design spiral galaxy
+            interacting with its companion NGC 5195. Their gravitational interaction triggers
+            star formation in M51&rsquo;s spiral arms, giving it a particularly vivid appearance.
+          </li>
+        </ul>
+
+        <!-- Galaxy data table -->
+        <h2>Local Group Galaxy Data</h2>
+        <p>
+          The <strong>Local Group</strong> is the galaxy group that includes the Milky Way and
+          approximately 54 other galaxies, spanning a volume of about 10 million light-years.
+          The table below shows key data for the major members.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Galaxy</th>
+                <th>Type</th>
+                <th>Distance from MW</th>
+                <th>Diameter</th>
+                <th>Stars (Approx.)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Milky Way</strong></td>
+                <td>Barred Spiral</td>
+                <td>0</td>
+                <td>~100,000 ly</td>
+                <td>100&ndash;400 billion</td>
+              </tr>
+              <tr>
+                <td><strong>Andromeda (M31)</strong></td>
+                <td>Spiral</td>
+                <td>2.537 million ly</td>
+                <td>~220,000 ly</td>
+                <td>~1 trillion</td>
+              </tr>
+              <tr>
+                <td><strong>Triangulum (M33)</strong></td>
+                <td>Spiral</td>
+                <td>2.73 million ly</td>
+                <td>~60,000 ly</td>
+                <td>~40 billion</td>
+              </tr>
+              <tr>
+                <td><strong>Large Magellanic Cloud</strong></td>
+                <td>Irregular</td>
+                <td>~160,000 ly</td>
+                <td>~14,000 ly</td>
+                <td>~30 billion</td>
+              </tr>
+              <tr>
+                <td><strong>Small Magellanic Cloud</strong></td>
+                <td>Irregular</td>
+                <td>~200,000 ly</td>
+                <td>~7,000 ly</td>
+                <td>~7 billion</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr />
+
+        <!-- Galactic collision info -->
+        <h2>The Milky Way &ndash; Andromeda Collision</h2>
+
+        <p>
+          The Milky Way and the Andromeda Galaxy are <strong>approaching each other</strong>
+          at approximately 110 kilometres per second. In about 4.5 billion years, the two galaxies
+          will collide and eventually merge into a single, larger elliptical galaxy sometimes
+          called <em>&ldquo;Milkomeda&rdquo;</em>. Despite the dramatic scale of this collision,
+          the vast distances between individual stars mean that stellar collisions will be
+          extremely rare. Our Sun will survive, though it may be flung into a very different orbit
+          within the new merged galaxy.
+        </p>
+
+        <div class="warn-box">
+          <strong>Note:</strong> This collision will not occur for another 4.5 billion years &mdash;
+          approximately the current age of the Earth. There is nothing to worry about in any human
+          timeframe.
+        </div>
+
+        <!-- External link -->
+        <!-- Ordered list: Top 5 most famous galaxies -->
+        <h2>Five Most Famous Galaxies</h2>
+        <ol class="space-ol">
+          <li>
+            <strong>The Milky Way</strong> &mdash; Our home galaxy, a barred spiral galaxy
+            containing 200&ndash;400 billion stars, stretching approximately 100,000 light-years
+            across. Earth is located about 26,000 light-years from the galactic centre.
+          </li>
+          <li>
+            <strong>Andromeda (M31)</strong> &mdash; The nearest large galaxy to the Milky Way,
+            at 2.537 million light-years away. Andromeda is on a collision course with our galaxy
+            and is expected to merge with the Milky Way in about 4.5 billion years.
+          </li>
+          <li>
+            <strong>Triangulum Galaxy (M33)</strong> &mdash; The third-largest galaxy in the
+            Local Group, a small spiral galaxy visible to the naked eye under very dark skies.
+            It contains approximately 40 billion stars.
+          </li>
+          <li>
+            <strong>Sombrero Galaxy (M104)</strong> &mdash; A striking edge-on spiral galaxy with
+            a bright white core and a dark dust lane, located about 31 million light-years away in
+            the constellation Virgo.
+          </li>
+          <li>
+            <strong>Whirlpool Galaxy (M51)</strong> &mdash; A classic interacting spiral galaxy
+            located 23 million light-years away. Its beautiful spiral arms, highlighted by star
+            formation, were first noted by Charles Messier in 1773.
+          </li>
+        </ol>
+
+        <p>
+          Explore stunning galaxy imagery at the
+          <a href="https://hubblesite.org/images/gallery" target="_blank" rel="noopener noreferrer">
+            Hubble Space Telescope Gallery</a>.
+        </p>
+
+        <p class="text-right">
+          <a href="#" class="back-link" style="display:inline-flex;">&#8679; Back to Top</a>
+        </p>
+
+      </main>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="footer-inner">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+          <p>&copy; 2025 Space Explorer &mdash; <span class="footer-name">Harmit Patel</span> &bull; COMP2057-91 &bull; University of Windsor</p>
+        </div>
+      </footer>
+
+      <button id="scrollTopBtn" title="Back to top"
+              style="position:fixed;bottom:30px;right:30px;
+                     background:var(--color-primary);color:var(--color-bg);
+                     border:none;border-radius:50%;width:44px;height:44px;
+                     font-size:1.2rem;cursor:pointer;opacity:0;
+                     transition:opacity 0.3s ease;z-index:999;">&#8679;</button>
+
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

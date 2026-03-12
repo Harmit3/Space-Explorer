@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     solarsystem.html - The Solar System Page
+     Author: Harmit Patel - COMP2057-91
+     Description: Covers the 8 planets, the Sun, and key facts
+                  about our Solar System. Demonstrates tables,
+                  ordered lists, definition lists, images, and
+                  internal anchor links for in-page navigation.
+     ============================================================ -->
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore the eight planets and wonders of our Solar System." />
+
+    <!-- Page-specific title shown in the browser tab -->
+    <title>Space Explorer | Solar System</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Additional inline styles specific to this page -->
+    <style>
+      /* Planet badge: coloured pill label displayed beside each planet name */
+      .planet-badge {
+        display:      inline-block;
+        padding:      3px 10px;
+        border-radius: 20px;
+        font-size:    0.7rem;
+        font-family:  var(--font-display);
+        font-weight:  700;
+        letter-spacing: 0.1em;
+        margin-left:  8px;
+        vertical-align: middle;
+      }
+      /* Rocky planet badge colour */
+      .badge-rocky  { background: rgba(255,100,50,0.2); color: #ff8060; border: 1px solid rgba(255,100,50,0.4); }
+      /* Gas giant badge colour */
+      .badge-gas    { background: rgba(123,47,255,0.2); color: #a07fff; border: 1px solid rgba(123,47,255,0.4); }
+      /* Ice giant badge colour */
+      .badge-ice    { background: rgba(0,212,255,0.2);  color: #00d4ff; border: 1px solid rgba(0,212,255,0.3); }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="starfield"></canvas>
+    <div class="page-wrapper">
+
+      <!-- HEADER & NAV (consistent across all pages) -->
+      <header>
+        <div class="header-inner">
+          <a href="index.html" class="site-logo">SPACE<span>&nbsp;EXPLORER</span></a>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <main>
+
+        <!-- Back to home navigation link -->
+        <a href="index.html" class="back-link">Back to Home</a>
+
+        <!-- Page title and subtitle -->
+        <h1 class="page-title">Our Solar System</h1>
+        <p class="page-subtitle">&#9728; Eight Planets, One Star, Infinite Wonder</p>
+
+        <!-- ====================================================
+             INTERNAL NAVIGATION (jump links)
+             Required because this page is 1.5+ screens long.
+             Each link jumps to a named anchor further down.
+             ==================================================== -->
+        <div class="jump-nav">
+          <p>Jump to Section</p>
+          <ul>
+            <li><a href="#sun">The Sun</a></li>
+            <li><a href="#inner-planets">Inner Planets</a></li>
+            <li><a href="#outer-planets">Outer Planets</a></li>
+            <li><a href="#planet-table">Planet Data</a></li>
+            <li><a href="#lists">Key Facts</a></li>
+          </ul>
+        </div>
+
+        <!-- Introduction paragraphs -->
+        <p>
+          Our Solar System formed approximately <strong>4.6 billion years ago</strong>
+          from a giant cloud of gas and dust called a solar nebula. The Sun contains
+          <em>99.86%</em> of the Solar System&rsquo;s total mass, while the eight planets,
+          dozens of moons, and countless smaller bodies make up the remainder.
+          From the blazing surface of Mercury to the frigid outer reaches of Neptune,
+          the diversity of worlds in our cosmic neighbourhood is staggering.
+        </p>
+
+        <p>
+          Studying the Solar System has driven some of humanity&rsquo;s greatest achievements
+          in science and technology. The space age, beginning with Sputnik in 1957, unlocked
+          direct exploration through robotic probes, landers, and crewed missions. Today,
+          spacecraft like the Perseverance rover on Mars and the Juno orbiter around Jupiter
+          continue to send back groundbreaking data about our neighbouring worlds.
+        </p>
+
+        <!-- Page image: Solar System diagram placeholder using CSS art -->
+        <div class="img-frame">
+          <img src="solarsystem.jpg"
+               alt="Diagram showing the eight planets of the Solar System in order from the Sun"
+               width="900" height="380"
+               style="width:100%;height:auto;background:linear-gradient(90deg,#ff6432,#ffd700,#00aaff,#7b2fff);
+                      min-height:200px;display:block;" />
+        </div>
+
+        <hr />
+
+        <!-- ====================================================
+             THE SUN - anchor target for internal link
+             ==================================================== -->
+        <h2 id="sun" class="anchor-target">The Sun</h2>
+
+        <p>
+          The Sun is a <strong>G-type main-sequence star</strong> (also called a yellow dwarf)
+          located at the centre of our Solar System. With a diameter of approximately
+          <em>1.39 million kilometres</em>, it could contain more than one million Earths.
+          The Sun&rsquo;s core temperature reaches an astounding 15 million&deg;C, where
+          nuclear fusion converts hydrogen into helium, releasing the energy that makes life
+          on Earth possible.
+        </p>
+
+        <!-- Info box callout -->
+        <div class="info-box">
+          <strong>Did You Know?</strong> Light from the Sun takes approximately
+          <em>8 minutes and 20 seconds</em> to travel the 150 million kilometres to Earth.
+          This distance is called one <strong>Astronomical Unit (AU)</strong>.
+        </div>
+
+        <hr />
+
+        <!-- ====================================================
+             INNER PLANETS - anchor target
+             ==================================================== -->
+        <h2 id="inner-planets" class="anchor-target">The Inner Planets</h2>
+
+        <p>
+          The four inner planets &mdash; Mercury, Venus, Earth, and Mars &mdash; are
+          known as the <strong>terrestrial planets</strong> because they have solid,
+          rocky surfaces. They are smaller and denser than the outer gas and ice giants,
+          and are separated from the outer planets by the Asteroid Belt.
+        </p>
+
+        <!-- Planet definitions using definition list (dl) -->
+        <dl class="space-dl">
+
+          <dt>Mercury <span class="planet-badge badge-rocky">Rocky</span></dt>
+          <dd>
+            The smallest planet and closest to the Sun. Mercury has no atmosphere to retain heat,
+            so temperatures swing from &minus;180&deg;C at night to 430&deg;C during the day.
+            A year on Mercury lasts only 88 Earth days.
+          </dd>
+
+          <dt>Venus <span class="planet-badge badge-rocky">Rocky</span></dt>
+          <dd>
+            Often called Earth&rsquo;s twin due to similar size, Venus is the hottest planet
+            at 465&deg;C on average &mdash; hotter than Mercury &mdash; due to a runaway
+            greenhouse effect. Its thick atmosphere is composed mostly of carbon dioxide.
+          </dd>
+
+          <dt>Earth <span class="planet-badge badge-rocky">Rocky</span></dt>
+          <dd>
+            Our home planet is the only known world harbouring life. Earth&rsquo;s liquid water,
+            protective magnetic field, and oxygen-rich atmosphere make it uniquely suited
+            to support the diversity of life we observe today.
+          </dd>
+
+          <dt>Mars <span class="planet-badge badge-rocky">Rocky</span></dt>
+          <dd>
+            The Red Planet gets its colour from iron oxide (rust) on its surface. Mars hosts
+            Olympus Mons, the tallest volcano in the Solar System at 21.9 km high,
+            and is a prime candidate for future human exploration.
+          </dd>
+
+        </dl><!-- end definition list -->
+
+        <hr />
+
+        <!-- ====================================================
+             OUTER PLANETS - anchor target
+             ==================================================== -->
+        <h2 id="outer-planets" class="anchor-target">The Outer Planets</h2>
+
+        <p>
+          Beyond the Asteroid Belt lie four massive outer planets: Jupiter and Saturn
+          (the <strong>gas giants</strong>) and Uranus and Neptune (the <strong>ice giants</strong>).
+          These worlds are fundamentally different from the terrestrial planets, possessing
+          thick gaseous or icy atmospheres and no solid surface to stand on.
+        </p>
+
+        <!-- Unordered list of outer planet highlights -->
+        <ul class="space-list">
+          <li>
+            <strong>Jupiter</strong> <span class="planet-badge badge-gas">Gas Giant</span>
+            &mdash; The largest planet, with a Great Red Spot storm that has raged for centuries.
+            Jupiter has at least 95 known moons, including Europa which may harbour a subsurface ocean.
+          </li>
+          <li>
+            <strong>Saturn</strong> <span class="planet-badge badge-gas">Gas Giant</span>
+            &mdash; Famous for its spectacular ring system made of ice and rock. Saturn is
+            the least dense planet &mdash; it would float if placed in a large enough body of water.
+          </li>
+          <li>
+            <strong>Uranus</strong> <span class="planet-badge badge-ice">Ice Giant</span>
+            &mdash; Unique for rotating on its side (97.77&deg; axial tilt), Uranus has
+            a cold atmosphere reaching &minus;224&deg;C, making it the coldest planetary atmosphere.
+          </li>
+          <li>
+            <strong>Neptune</strong> <span class="planet-badge badge-ice">Ice Giant</span>
+            &mdash; The farthest planet from the Sun, Neptune experiences the fastest winds
+            in the Solar System at speeds up to 2,100 km/h. Its moon Triton orbits
+            in retrograde (opposite to Neptune&rsquo;s rotation).
+          </li>
+        </ul>
+
+        <hr />
+
+        <!-- ====================================================
+             PLANET DATA TABLE - anchor target
+             ==================================================== -->
+        <h2 id="planet-table" class="anchor-target">Planet Comparison Table</h2>
+
+        <p>
+          The table below compares key characteristics of all eight planets, arranged
+          in order of distance from the Sun. Data is sourced from NASA&rsquo;s
+          Planetary Fact Sheet.
+        </p>
+
+        <!-- Table wrapper prevents horizontal overflow -->
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Planet</th>
+                <th>Type</th>
+                <th>Diameter (km)</th>
+                <th>Distance from Sun (AU)</th>
+                <th>Orbital Period</th>
+                <th>Known Moons</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Mercury</strong></td>
+                <td>Rocky</td>
+                <td>4,879</td>
+                <td>0.39</td>
+                <td>88 days</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><strong>Venus</strong></td>
+                <td>Rocky</td>
+                <td>12,104</td>
+                <td>0.72</td>
+                <td>225 days</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td><strong>Earth</strong></td>
+                <td>Rocky</td>
+                <td>12,756</td>
+                <td>1.00</td>
+                <td>365.25 days</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td><strong>Mars</strong></td>
+                <td>Rocky</td>
+                <td>6,792</td>
+                <td>1.52</td>
+                <td>687 days</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td><strong>Jupiter</strong></td>
+                <td>Gas Giant</td>
+                <td>142,984</td>
+                <td>5.20</td>
+                <td>11.9 years</td>
+                <td>95</td>
+              </tr>
+              <tr>
+                <td><strong>Saturn</strong></td>
+                <td>Gas Giant</td>
+                <td>120,536</td>
+                <td>9.58</td>
+                <td>29.5 years</td>
+                <td>146</td>
+              </tr>
+              <tr>
+                <td><strong>Uranus</strong></td>
+                <td>Ice Giant</td>
+                <td>51,118</td>
+                <td>19.2</td>
+                <td>84 years</td>
+                <td>28</td>
+              </tr>
+              <tr>
+                <td><strong>Neptune</strong></td>
+                <td>Ice Giant</td>
+                <td>49,528</td>
+                <td>30.1</td>
+                <td>165 years</td>
+                <td>16</td>
+              </tr>
+            </tbody>
+          </table>
+        </div><!-- end table-wrap -->
+
+        <hr />
+
+        <!-- ====================================================
+             KEY FACTS LISTS - anchor target
+             ==================================================== -->
+        <h2 id="lists" class="anchor-target">Key Facts About the Solar System</h2>
+
+        <!-- Ordered list: historical milestones -->
+        <h3>Major Solar System Discoveries (Chronological)</h3>
+        <ol class="space-ol">
+          <li>1543 &mdash; Copernicus proposes the heliocentric model of the Solar System.</li>
+          <li>1610 &mdash; Galileo discovers Jupiter&rsquo;s four largest moons with his telescope.</li>
+          <li>1781 &mdash; William Herschel discovers Uranus, doubling the known Solar System.</li>
+          <li>1846 &mdash; Johann Galle observes Neptune, predicted by mathematical calculations.</li>
+          <li>1930 &mdash; Clyde Tombaugh discovers Pluto (later reclassified as a dwarf planet).</li>
+          <li>1972 &mdash; Pioneer 10 becomes the first spacecraft to enter the Asteroid Belt.</li>
+          <li>2015 &mdash; NASA&rsquo;s New Horizons conducts the first flyby of Pluto.</li>
+        </ol>
+
+        <!-- External link to NASA -->
+        <p>
+          For the most up-to-date Solar System exploration news, visit
+          <a href="https://solarsystem.nasa.gov" target="_blank" rel="noopener noreferrer">
+            NASA&rsquo;s Solar System Exploration website</a>.
+        </p>
+
+        <!-- Back to top internal link -->
+        <p class="text-right">
+          <a href="#" class="back-link" style="display:inline-flex;">&#8679; Back to Top</a>
+        </p>
+
+      </main>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="footer-inner">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+          <p>&copy; 2025 Space Explorer &mdash; <span class="footer-name">Harmit Patel</span> &bull; COMP2057-91 &bull; University of Windsor</p>
+        </div>
+      </footer>
+
+      <button id="scrollTopBtn" title="Back to top"
+              style="position:fixed;bottom:30px;right:30px;
+                     background:var(--color-primary);color:var(--color-bg);
+                     border:none;border-radius:50%;width:44px;height:44px;
+                     font-size:1.2rem;cursor:pointer;opacity:0;
+                     transition:opacity 0.3s ease;z-index:999;">&#8679;</button>
+
+    </div><!-- end .page-wrapper -->
+    <script src="main.js"></script>
+  </body>
+</html>

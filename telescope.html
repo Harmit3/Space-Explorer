@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     telescope.html - Telescopes Page
+     Author: Harmit Patel - COMP2057-91
+     Description: Chronicles the history and technology of
+                  telescopes from Galileo's refractor to the
+                  James Webb Space Telescope. Demonstrates
+                  table, ordered and unordered lists, images,
+                  and CSS Cascading Style Sheets in action.
+     ============================================================ -->
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The history and technology of telescopes, from Galileo to James Webb." />
+    <title>Space Explorer | Telescopes</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Page-specific CSS: telescope lens visual and tech pill badges -->
+    <style>
+      /* Circular lens visual with layered glow to suggest telescope optics */
+      .lens-visual {
+        width:         200px;
+        height:        200px;
+        border-radius: 50%;
+        background:    radial-gradient(circle at 40% 40%,
+                         rgba(0,212,255,0.8) 0%,
+                         rgba(0,100,200,0.5) 30%,
+                         rgba(2,11,24,0.9) 70%,
+                         transparent 100%);
+        box-shadow:
+          0 0 0 3px rgba(0,212,255,0.4),
+          0 0 0 8px rgba(0,212,255,0.1),
+          0 0 60px rgba(0,212,255,0.3);
+        margin:     24px auto;
+        animation:  glowPulse 4s ease-in-out infinite;
+      }
+
+      /* Technology type badge (pill label) */
+      .tech-badge {
+        display:       inline-block;
+        font-family:   var(--font-display);
+        font-size:     0.65rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding:       3px 10px;
+        border-radius: 20px;
+        margin:        2px;
+      }
+      .badge-optical  { background:rgba(0,212,255,0.12); color:#00d4ff; border:1px solid rgba(0,212,255,0.3); }
+      .badge-radio    { background:rgba(123,47,255,0.12); color:#a07fff; border:1px solid rgba(123,47,255,0.3); }
+      .badge-infrared { background:rgba(255,100,50,0.12); color:#ff8060; border:1px solid rgba(255,100,50,0.3); }
+      .badge-space    { background:rgba(255,215,0,0.12);  color:#ffd700; border:1px solid rgba(255,215,0,0.3); }
+    </style>
+  </head>
+
+  <body>
+    <canvas id="starfield"></canvas>
+    <div class="page-wrapper">
+
+      <!-- HEADER -->
+      <header>
+        <div class="header-inner">
+          <a href="index.html" class="site-logo">SPACE<span>&nbsp;EXPLORER</span></a>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <a href="index.html" class="back-link">Back to Home</a>
+
+        <h1 class="page-title">Telescopes</h1>
+        <p class="page-subtitle">&#128301; Windows to the Cosmos</p>
+
+        <!-- Animated lens visual -->
+        <div class="lens-visual"></div>
+
+        <!-- Introduction -->
+        <!-- Hubble Space Telescope image -->
+        <div class="text-center">
+          <img src="hubble.jpg"
+               alt="Illustration of the Hubble Space Telescope orbiting Earth"
+               width="600" height="400"
+               style="width:100%;max-width:600px;height:auto;border-radius:12px;margin:20px auto;display:block;" />
+          <p style="color:var(--color-muted);font-size:0.8rem;">
+            <em>Illustration of the Hubble Space Telescope in low Earth orbit</em>
+          </p>
+        </div>
+        <!-- James Webb Space Telescope image -->
+        <div class="text-center" style="margin-top:20px;">
+          <img src="jwst.jpg"
+               alt="Illustration of the James Webb Space Telescope with its gold hexagonal mirror segments"
+               width="600" height="400"
+               style="width:100%;max-width:600px;height:auto;border-radius:12px;margin:20px auto;display:block;" />
+          <p style="color:var(--color-muted);font-size:0.8rem;">
+            <em>Illustration of the James Webb Space Telescope, launched in December 2021</em>
+          </p>
+        </div>
+        <p>
+          The telescope is arguably the most important scientific instrument ever invented.
+          By gathering and focusing light &mdash; far more than the unaided human eye can collect &mdash;
+          telescopes have revealed the true scale and structure of the cosmos. From
+          <strong>Galileo Galilei&rsquo;s</strong> crude refractor in 1609, which first showed
+          mountains on the Moon and moons orbiting Jupiter, to the orbital observatories of
+          the 21st century, the telescope&rsquo;s evolution parallels our expanding comprehension
+          of the universe.
+        </p>
+
+        <p>
+          Modern astronomy relies on telescopes operating across the full electromagnetic spectrum:
+          not just visible light, but also <em>radio waves, infrared, ultraviolet, X-rays,
+          and gamma rays</em>. Each wavelength reveals different phenomena hidden from optical
+          telescopes, building a comprehensive picture of the universe&rsquo;s physical processes.
+          Space-based observatories, free from the blurring and absorbing effects of Earth&rsquo;s
+          atmosphere, provide the sharpest and deepest views of the cosmos.
+        </p>
+
+        <hr />
+
+        <!-- CSS demonstration section -->
+        <h2>Cascading Style Sheet Demonstration</h2>
+        <p>
+          The following boxes are styled entirely using the external style sheet
+          <code style="color:var(--color-gold);font-size:0.9em;">style.css</code>
+          linked in the <code style="color:var(--color-gold);font-size:0.9em;">&lt;head&gt;</code>
+          of each page. CSS is used throughout this site to control fonts, colours,
+          layout, animations, and responsive breakpoints. Below is a demonstration of
+          some CSS capabilities applied to telescope type badges:
+        </p>
+
+        <!-- Badge showcase -->
+        <div style="margin:20px 0;padding:24px;background:var(--color-card);
+                    border:1px solid var(--color-border);border-radius:8px;">
+          <p style="font-family:var(--font-display);font-size:0.7rem;
+                    color:var(--color-muted);letter-spacing:0.15em;margin-bottom:14px;">
+            TELESCOPE TYPE BADGES (CSS-Styled):
+          </p>
+          <span class="tech-badge badge-optical">Optical</span>
+          <span class="tech-badge badge-radio">Radio</span>
+          <span class="tech-badge badge-infrared">Infrared</span>
+          <span class="tech-badge badge-space">Space-Based</span>
+          <br /><br />
+          <p>
+            Each badge uses <strong>border-radius</strong>, <strong>background</strong>,
+            <strong>color</strong>, and <strong>border</strong> CSS properties defined
+            in the <em>style.css</em> cascade. The &ldquo;cascade&rdquo; in CSS means that
+            styles are applied in order of specificity &mdash; more specific rules override
+            more general ones.
+          </p>
+        </div>
+
+        <hr />
+
+        <!-- History: ordered list -->
+        <h2>History of the Telescope</h2>
+        <p>Key milestones in the development of astronomical telescopes:</p>
+
+        <ol class="space-ol">
+          <li>
+            <strong>1608 &mdash; First Patent</strong>: Hans Lipperhey of the Netherlands
+            filed the first known patent for a telescope, using two lenses to magnify
+            distant objects. Several other inventors independently developed similar devices
+            around the same time.
+          </li>
+          <li>
+            <strong>1609 &mdash; Galileo&rsquo;s Observations</strong>: Galileo Galilei built
+            his own improved refractor and turned it skyward, discovering lunar craters, the
+            four largest moons of Jupiter, and the phases of Venus.
+          </li>
+          <li>
+            <strong>1668 &mdash; Newton&rsquo;s Reflector</strong>: Isaac Newton designed the
+            first practical reflecting telescope, using a curved mirror rather than a lens
+            to gather light, eliminating chromatic aberration.
+          </li>
+          <li>
+            <strong>1937 &mdash; First Radio Telescope</strong>: Grote Reber built the first
+            purpose-built radio telescope in his back yard in Illinois, USA, opening a new window
+            on the universe invisible to optical instruments.
+          </li>
+          <li>
+            <strong>1990 &mdash; Hubble Space Telescope</strong>: Launched into low Earth orbit,
+            Hubble provided the first diffraction-limited images of distant galaxies, despite
+            an initial mirror flaw corrected by astronauts in 1993.
+          </li>
+          <li>
+            <strong>2021 &mdash; James Webb Space Telescope</strong>: The largest and most
+            powerful space telescope ever built, JWST observes primarily in infrared, enabling
+            it to see the most distant galaxies and peer through dusty stellar nurseries.
+          </li>
+        </ol>
+
+        <hr />
+
+        <!-- Types of telescopes: unordered list -->
+        <h2>Types of Telescopes</h2>
+
+        <ul class="space-list">
+          <li>
+            <strong>Refractor Telescopes</strong>
+            <span class="tech-badge badge-optical">Optical</span>
+            &mdash; Use a series of lenses to gather and focus light. Simple and low-maintenance,
+            but limited in aperture size due to the difficulty of producing large, high-quality glass lenses.
+          </li>
+          <li>
+            <strong>Reflector Telescopes</strong>
+            <span class="tech-badge badge-optical">Optical</span>
+            &mdash; Use mirrors to collect light, allowing much larger apertures than refractors.
+            Most large ground-based professional telescopes are reflectors, including the 10-metre
+            Keck telescopes in Hawaii.
+          </li>
+          <li>
+            <strong>Radio Telescopes</strong>
+            <span class="tech-badge badge-radio">Radio</span>
+            &mdash; Large dish antennas that collect radio waves from astronomical sources.
+            The FAST telescope in China, with a 500-metre diameter, is the world&rsquo;s largest
+            single-dish radio telescope.
+          </li>
+          <li>
+            <strong>Infrared Telescopes</strong>
+            <span class="tech-badge badge-infrared">Infrared</span>
+            &mdash; Detect infrared radiation, which penetrates gas and dust clouds that block visible light.
+            JWST is the most powerful infrared space telescope ever deployed.
+          </li>
+          <li>
+            <strong>Space-Based Telescopes</strong>
+            <span class="tech-badge badge-space">Space-Based</span>
+            &mdash; Operate above Earth&rsquo;s atmosphere, avoiding atmospheric distortion
+            and absorption. Examples include Hubble, Chandra (X-ray), and Fermi (gamma-ray).
+          </li>
+        </ul>
+
+        <!-- Telescope comparison table -->
+        <h2>Notable Telescope Comparison</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Telescope</th>
+                <th>Type</th>
+                <th>Location</th>
+                <th>Primary Mirror/Dish</th>
+                <th>Operational</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Hubble Space Telescope</strong></td>
+                <td>Optical / UV / IR</td>
+                <td>Low Earth Orbit</td>
+                <td>2.4 m</td>
+                <td>1990&ndash;Present</td>
+              </tr>
+              <tr>
+                <td><strong>James Webb Space Telescope</strong></td>
+                <td>Infrared</td>
+                <td>L2 Lagrange Point</td>
+                <td>6.5 m</td>
+                <td>2022&ndash;Present</td>
+              </tr>
+              <tr>
+                <td><strong>Very Large Telescope (VLT)</strong></td>
+                <td>Optical</td>
+                <td>Cerro Paranal, Chile</td>
+                <td>4 &times; 8.2 m</td>
+                <td>1999&ndash;Present</td>
+              </tr>
+              <tr>
+                <td><strong>Arecibo Observatory</strong></td>
+                <td>Radio</td>
+                <td>Puerto Rico</td>
+                <td>305 m</td>
+                <td>1963&ndash;2020 (Collapsed)</td>
+              </tr>
+              <tr>
+                <td><strong>FAST</strong></td>
+                <td>Radio</td>
+                <td>Guizhou, China</td>
+                <td>500 m</td>
+                <td>2016&ndash;Present</td>
+              </tr>
+              <tr>
+                <td><strong>Chandra X-ray Observatory</strong></td>
+                <td>X-ray</td>
+                <td>Highly Elliptical Orbit</td>
+                <td>1.2 m</td>
+                <td>1999&ndash;Present</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- External link -->
+        <p>
+          Follow James Webb Space Telescope discoveries at the
+          <a href="https://webb.nasa.gov" target="_blank" rel="noopener noreferrer">
+            James Webb Space Telescope official site</a>.
+        </p>
+
+        <p class="text-right">
+          <a href="#" class="back-link" style="display:inline-flex;">&#8679; Back to Top</a>
+        </p>
+
+      </main>
+
+      <!-- FOOTER -->
+      <footer>
+        <div class="footer-inner">
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="solarsystem.html">Solar System</a></li>
+              <li><a href="blackholes.html">Black Holes</a></li>
+              <li><a href="missions.html">Missions</a></li>
+              <li><a href="galaxies.html">Galaxies</a></li>
+              <li><a href="telescope.html">Telescopes</a></li>
+              <li><a href="astronauts.html">Astronauts</a></li>
+              <li><a href="nebulae.html">Nebulae</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="citations.html">Citations</a></li>
+            </ul>
+          </nav>
+          <p>&copy; 2025 Space Explorer &mdash; <span class="footer-name">Harmit Patel</span> &bull; COMP2057-91 &bull; University of Windsor</p>
+        </div>
+      </footer>
+
+      <button id="scrollTopBtn" title="Back to top"
+              style="position:fixed;bottom:30px;right:30px;
+                     background:var(--color-primary);color:var(--color-bg);
+                     border:none;border-radius:50%;width:44px;height:44px;
+                     font-size:1.2rem;cursor:pointer;opacity:0;
+                     transition:opacity 0.3s ease;z-index:999;">&#8679;</button>
+
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
