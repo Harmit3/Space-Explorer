@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- ============================================================
      blackholes.html - Black Holes Page
-     Author: Harmit Patel - COMP2057-91
+     Author: Harmit Patel -                
      Description: In-depth look at black holes: types, formation,
                   key concepts like the event horizon and
                   Hawking radiation. Demonstrates the definition
@@ -53,6 +53,24 @@
         border-bottom: 8px solid rgba(255,100,50,0.3);
         animation:     spin 6s linear infinite;
       }
+      /* Planet badge: coloured pill label displayed beside each planet name */
+      .planet-badge {
+        display:      inline-block;
+        padding:      3px 10px;
+        border-radius: 20px;
+        font-size:    0.7rem;
+        font-family:  var(--font-display);
+        font-weight:  700;
+        letter-spacing: 0.1em;
+        margin-left:  8px;
+        vertical-align: middle;
+      }
+      /* Rocky planet badge colour */
+      .badge-rocky  { background: rgba(255,100,50,0.2); color: #ff8060; border: 1px solid rgba(255,100,50,0.4); }
+      /* Gas giant badge colour */
+      .badge-gas    { background: rgba(123,47,255,0.2); color: #a07fff; border: 1px solid rgba(123,47,255,0.4); }
+      /* Ice giant badge colour */
+      .badge-ice    { background: rgba(0,212,255,0.2);  color: #00d4ff; border: 1px solid rgba(0,212,255,0.3); }
     </style>
   </head>
 
@@ -91,7 +109,7 @@
         <div class="text-center">
           <img src="blackhole.jpg"
                alt="Artistic rendering of a black hole with glowing accretion disc"
-               width="600" height="400"
+               width="400" height="300"
                style="width:100%;max-width:600px;height:auto;border-radius:12px;margin:20px auto;display:block;" />
         </div>
 
@@ -103,10 +121,11 @@
           </p>
         </div>
 
+        <hr/>
         <!-- Introduction -->
         <p>
-          A black hole is a region of spacetime where gravity is so immense that nothing &mdash;
-          not even <strong>light</strong> &mdash; can escape its gravitational pull once it crosses
+          A black hole is a region of spacetime where gravity is so immense that nothing  
+          not even <strong>light</strong>   can escape its gravitational pull once it crosses
           a boundary called the <em>event horizon</em>. Black holes form when massive stars
           exhaust their nuclear fuel and collapse under their own gravity, sometimes triggering
           a spectacular explosion known as a <strong>supernova</strong>.
@@ -126,17 +145,17 @@
         <!-- Special characters demonstration section -->
         <h2>Special Astronomical Symbols</h2>
         <div class="special-chars">
-          Sun: &#9728; &nbsp;&nbsp;
-          Star: &#9733; &nbsp;&nbsp;
-          Black Circle: &#11044; &nbsp;&nbsp;
-          Infinity: &infin; &nbsp;&nbsp;
-          Delta: &Delta; &nbsp;&nbsp;
-          Degree: &deg; &nbsp;&nbsp;
-          Copyright: &copy; &nbsp;&nbsp;
-          Registered: &reg; &nbsp;&nbsp;
-          Trade: &trade; &nbsp;&nbsp;
-          Pi: &pi; &nbsp;&nbsp;
-          Alpha: &alpha; &nbsp;&nbsp;
+          Sun: &#9728; &nbsp;
+          Star: &#9733; &nbsp;
+          Black Circle: &#11044; &nbsp;
+          Infinity: &infin; &nbsp;
+          Delta: &Delta; &nbsp;
+          Degree: &deg; &nbsp;
+          Copyright: &copy; &nbsp;
+          Registered: &reg; &nbsp;
+          Trade: &trade; &nbsp;
+          Pi: &pi; &nbsp;
+          Alpha: &alpha; &nbsp;
           Omega: &Omega;
         </div>
 
@@ -172,7 +191,7 @@
             Lurking at the centres of most large galaxies, supermassive black holes range
             from millions to <em>billions</em> of solar masses. The Milky Way hosts
             Sagittarius A*, a supermassive black hole with a mass of roughly 4 million Suns.
-            When actively feeding on surrounding matter, they become quasars &mdash; the
+            When actively feeding on surrounding matter, they become quasars   the
             brightest persistent objects in the universe.
           </dd>
 
@@ -192,28 +211,28 @@
 
         <ul class="space-list">
           <li>
-            <strong>Event Horizon</strong> &mdash; The point of no return around a black hole.
+            <strong>Event Horizon</strong>   The point of no return around a black hole.
             Once any matter or light crosses this boundary, it cannot escape. The radius of the
             event horizon is called the Schwarzschild radius.
           </li>
           <li>
-            <strong>Singularity</strong> &mdash; The theoretical point at the centre of a
+            <strong>Singularity</strong>   The theoretical point at the centre of a
             black hole where density becomes infinite and known physics breaks down.
             General relativity predicts singularities; quantum mechanics may resolve them.
           </li>
           <li>
-            <strong>Accretion Disc</strong> &mdash; A swirling disc of superheated gas and dust
+            <strong>Accretion Disc</strong>   A swirling disc of superheated gas and dust
             orbiting the black hole. As material falls inward, friction heats it to millions
             of degrees, causing it to glow brightly across the electromagnetic spectrum.
           </li>
           <li>
-            <strong>Hawking Radiation</strong> &mdash; Proposed by physicist Stephen Hawking in 1974,
+            <strong>Hawking Radiation</strong>   Proposed by physicist Stephen Hawking in 1974,
             this quantum effect predicts that black holes slowly emit thermal radiation and
             gradually evaporate over astronomical timescales. Smaller black holes evaporate
             faster than larger ones.
           </li>
           <li>
-            <strong>Gravitational Time Dilation</strong> &mdash; Near a black hole, extreme gravity
+            <strong>Gravitational Time Dilation</strong>   Near a black hole, extreme gravity
             causes time to pass more slowly relative to a distant observer. This effect,
             predicted by Einstein, has been experimentally confirmed on Earth using atomic clocks.
           </li>
@@ -223,23 +242,23 @@
         <h2>Key Milestones in Black Hole History</h2>
         <ol class="space-ol">
           <li>
-            <strong>1916</strong> &mdash; Karl Schwarzschild derives the first exact solution
+            <strong>1916</strong>   Karl Schwarzschild derives the first exact solution
             to Einstein&rsquo;s field equations, describing the geometry around a point mass.
           </li>
           <li>
-            <strong>1964</strong> &mdash; Cygnus X-1 is discovered as the first widely accepted
+            <strong>1964</strong>   Cygnus X-1 is discovered as the first widely accepted
             black hole candidate from X-ray observations made by a sounding rocket.
           </li>
           <li>
-            <strong>1974</strong> &mdash; Stephen Hawking theorises that black holes emit thermal
+            <strong>1974</strong>   Stephen Hawking theorises that black holes emit thermal
             radiation (Hawking Radiation) due to quantum effects near the event horizon.
           </li>
           <li>
-            <strong>2015</strong> &mdash; LIGO detects gravitational waves from two merging
+            <strong>2015</strong>   LIGO detects gravitational waves from two merging
             stellar black holes, directly confirming their existence for the first time.
           </li>
           <li>
-            <strong>2019</strong> &mdash; The Event Horizon Telescope releases the first-ever
+            <strong>2019</strong>   The Event Horizon Telescope releases the first-ever
             photograph of a black hole: the supermassive M87* at 55 million light-years away.
           </li>
         </ol>
@@ -298,10 +317,10 @@
         </div>
 
         <!-- External link -->
-        <p>
+        <p class="link">
           Learn more about black hole research at the
-          <a href="https://eventhorizontelescope.org" target="_blank" rel="noopener noreferrer">
-            Event Horizon Telescope Collaboration website</a>.
+          <a href="https://eventhorizontelescope.org" target="_blank" rel="noopener noreferrer"><span  class="planet-badge badge-gas">
+            Event Horizon Telescope Collaboration website</span></a>.
         </p>
 
         <p class="text-right">
@@ -327,7 +346,7 @@
               <li><a href="citations.html">Citations</a></li>
             </ul>
           </nav>
-          <p>&copy; 2025 Space Explorer &mdash; <span class="footer-name">Harmit Patel</span> &bull; COMP2057-91 &bull; University of Windsor</p>
+          <p>&copy; 2026 Space Explorer   <span class="footer-name">Harmit Patel</span>                                                  </p>
         </div>
       </footer>
 

@@ -1,8 +1,8 @@
 /* ============================================================
    style.css - Main Cascading Style Sheet for Space Explorer
-   Author: Harmit Patel - COMP2057-91
+   Author: Harmit Patel -                
    Course: Introduction to the Internet
-   University of Windsor - School of Computer Science
+   - School of Computer Science
    Description: Defines all global styles, animations, layout,
                 typography, colours (hex values only), and
                 visual theme for the Space Explorer website.
@@ -600,6 +600,10 @@ img {
   clear:   both;
 }
 
+.link a{
+  text-decoration:none;
+  color:            #c8e6f5;
+}
 /* ============================================================
    IMAGE MAP CONTAINER
    ============================================================ */
@@ -728,6 +732,26 @@ img {
   letter-spacing: 0.08em;
   color:         #c8e6f5;
 }
+
+
+.planet-badge {
+        display:      inline-block;
+        padding:      3px 10px;
+        border-radius: 20px;
+        font-size:    0.7rem;
+        font-family:  var(--font-display);
+        font-weight:  700;
+        letter-spacing: 0.1em;
+        margin-left:  8px;
+        vertical-align: middle;
+      }
+      /* Rocky planet badge colour */
+      .badge-rocky  { background: rgba(255,100,50,0.2); color: #ff8060; border: 1px solid rgba(255,100,50,0.4); }
+      /* Gas giant badge colour */
+      .badge-gas    { background: rgba(123,47,255,0.2); color: #a07fff; border: 1px solid rgba(123,47,255,0.4); }
+      /* Ice giant badge colour */
+      .badge-ice    { background: rgba(0,212,255,0.2);  color: #00d4ff; border: 1px solid rgba(0,212,255,0.3); }
+      
 
 /* ============================================================
    FOOTER  -  background #020b18
